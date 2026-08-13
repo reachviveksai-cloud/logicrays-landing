@@ -77,7 +77,8 @@
     { "@type": "Question", "name": "We already invest in SEO. Isn't that enough?", "acceptedAnswer": { "@type": "Answer", "text": "SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets your store bought from. Being mentioned is the first two layers of a five-layer problem. An agent that finds you but cannot verify your identity, read your return terms or complete your checkout recommends a competitor it can. Most stores we audit are strong on visibility and empty on buyability." } },
     { "@type": "Question", "name": "Do I need to rebuild my store or change platforms?", "acceptedAnswer": { "@type": "Answer", "text": "No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters." } },
     { "@type": "Question", "name": "What does the free audit include, and what happens after?", "acceptedAnswer": { "@type": "Answer", "text": "We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally. Others engage our Agentic Commerce Orchestration service: a dedicated, Goofre-certified ACO assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as the standard shifts. There is no obligation either way." } },
-    { "@type": "Question", "name": "Why Logic Rays for AI readiness?", "acceptedAnswer": { "@type": "Answer", "text": "Because we co-build the platform. Goofre, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it." } }
+    { "@type": "Question", "name": "Why Logic Rays for AI readiness?", "acceptedAnswer": { "@type": "Answer", "text": "Because we co-build the platform. Goofre, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it." } },
+    { "@type": "Question", "name": "Which agentic commerce standards do you build to?", "acceptedAnswer": { "@type": "Answer", "text": "The open standards the market is actually converging on: the Agentic Commerce Protocol (ACP) from OpenAI and Stripe, which powers agent checkout in ChatGPT; the Agent Payments Protocol (AP2) from Google and 60-plus payment networks, for trusted machine-initiated payments; and the Model Context Protocol (MCP) from Anthropic, for how agents access store data. Goofre's readiness engine measures your store against these standards and the structured-data foundations beneath them, so your readiness is held to a public bar, not our opinion." } }
   ]
 }
 </script>
@@ -151,6 +152,37 @@
   .lr-nav .crumb { font-size: .72rem; color: var(--ink-3); font-weight: 500; }
   .lr-nav .active .sm { display: none; }
   @media (max-width: 860px){ .lr-nav .hide-sm { display: none; } .lr-nav .active .lg { display: none; } .lr-nav .active .sm { display: inline; } }
+
+  /* ── Sticky in-page section nav: the merchant's journey + persistent CTA ── */
+  .subnav { position: sticky; top: 74px; z-index: 30; background: rgba(255,255,255,.92);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+  .subnav .shell { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 52px; }
+  .subnav-links { display: flex; gap: 1.7rem; overflow-x: auto; scrollbar-width: none; }
+  .subnav-links::-webkit-scrollbar { display: none; }
+  .subnav-links a { white-space: nowrap; font-size: .86rem; font-weight: 500; color: var(--ink-2);
+    text-decoration: none; padding: .35rem 0; border-bottom: 2px solid transparent; }
+  .subnav-links a:hover { color: var(--coral); border-bottom-color: var(--coral); }
+  .subnav .subnav-cta { padding: .5rem 1.15rem; font-size: .84rem; box-shadow: none; flex: none; }
+  @media (max-width: 860px){ .subnav .subnav-cta { display: none; } .subnav .shell { height: 48px; } }
+  /* jump links must clear the sticky header (74px) + subnav (~52px) */
+  html { scroll-behavior: smooth; }
+  section[id], div[id] { scroll-margin-top: 134px; }
+
+  /* ── 06 · Standards authority band ────────────────────────────────── */
+  .protos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.8rem 0 0; }
+  .proto { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px;
+    padding: 1.6rem 1.5rem; display: flex; flex-direction: column; }
+  .proto-tag { align-self: flex-start; font-weight: 800; font-size: .82rem; letter-spacing: .05em; color: var(--green);
+    background: var(--green-soft); border: 1px solid rgba(0,138,96,.25); border-radius: 8px; padding: .28rem .6rem; margin-bottom: .95rem; }
+  .proto h3 { margin: 0 0 .2rem; font-size: 1.06rem; }
+  .proto .proto-by { font-size: .78rem; color: var(--tan); font-weight: 600; margin: 0 0 .85rem; }
+  .proto > p { font-size: .9rem; margin: 0 0 1.1rem; }
+  .proto-layer { margin-top: auto; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--ink-3); border-top: 1px solid var(--rule); padding-top: .85rem; }
+  .proto-foot { margin-top: 1.2rem; background: var(--warm); border: 1px solid var(--rule); border-left: 4px solid var(--green);
+    border-radius: 14px; padding: 1.35rem 1.7rem; }
+  .proto-foot p { margin: 0; font-size: .92rem; max-width: 92ch; }
+  @media (max-width: 760px){ .protos { grid-template-columns: 1fr; } }
 
   /* ── Hero ─────────────────────────────────────────────────────────── */
   .hero { padding: 4.5rem 0 4rem; }
@@ -344,6 +376,20 @@
     </nav>
   </div>
 </header>
+
+<!-- ══════════ sticky in-page journey nav ══════════ -->
+<nav class="subnav" aria-label="On this page">
+  <div class="shell">
+    <div class="subnav-links">
+      <a href="#what">What is agentic commerce</a>
+      <a href="#shift">Why it matters</a>
+      <a href="#how">The service</a>
+      <a href="#standards">The standards</a>
+      <a href="#report">The free audit</a>
+    </div>
+    <a class="btn btn-primary subnav-cta" href="https://cal.com/logicrays?src=lr-aco">Book free audit</a>
+  </div>
+</nav>
 
 <div class="shell" id="top">
 
@@ -622,7 +668,50 @@
     </div>
   </section>
 
-  <!-- ══════════ 06 · GOOFRE CO-BUILD ══════════ -->
+  <!-- ══════════ 06 · THE STANDARDS ══════════ -->
+  <section id="standards">
+    <p class="eyebrow">06 · The standards</p>
+    <h2 style="max-width:24ch;">Built to the standards agents actually use.</h2>
+    <p style="max-width:72ch;">
+      Agentic commerce isn't a Logic Rays opinion. It runs on open standards the largest AI and
+      payment companies are shipping right now, and your readiness is measured against them, layer by
+      layer. This is the vocabulary the agency readying your store should be fluent in.
+    </p>
+    <div class="protos">
+      <div class="proto">
+        <span class="proto-tag">ACP</span>
+        <h3>Agentic Commerce Protocol</h3>
+        <p class="proto-by">OpenAI + Stripe · powers ChatGPT checkout</p>
+        <p>The open standard for how an AI agent completes a purchase: reads your catalogue, builds the
+        cart and checks out, without a human ever touching your site.</p>
+        <span class="proto-layer">Layer 4 · Transactability</span>
+      </div>
+      <div class="proto">
+        <span class="proto-tag">AP2</span>
+        <h3>Agent Payments Protocol</h3>
+        <p class="proto-by">Google + 60+ payment networks</p>
+        <p>How an agent proves it was authorised to pay, so your store can safely trust a purchase a
+        machine started on a shopper's behalf.</p>
+        <span class="proto-layer">Layer 3 · Identity &amp; trust</span>
+      </div>
+      <div class="proto">
+        <span class="proto-tag">MCP</span>
+        <h3>Model Context Protocol</h3>
+        <p class="proto-by">Anthropic · the &ldquo;USB-C for AI&rdquo;</p>
+        <p>How an agent reaches and reads your store's data and tools in the first place, cleanly and
+        reliably, instead of guessing.</p>
+        <span class="proto-layer">Layers 1&ndash;2 · Access &amp; comprehension</span>
+      </div>
+    </div>
+    <div class="proto-foot">
+      <p><strong>Where Goofre™ fits.</strong> Goofre™ is the readiness engine that measures your store
+      against these standards and the structured-data foundations beneath them, then grades the gaps.
+      Logic Rays does the work to close them. You are not taking our word for &ldquo;ready&rdquo; — your
+      store is being held to a public bar the whole industry is moving toward.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 07 · GOOFRE CO-BUILD ══════════ -->
   <section>
     <div class="cobuild-slim">
       <div>
@@ -650,6 +739,7 @@
       <details><summary>Do I need to rebuild my store or change platforms?</summary><p>No. The work happens on your existing Magento store: the Goofre™ storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters.</p></details>
       <details><summary>What does the free audit include, and what happens after?</summary><p>We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally. Others engage our <strong>Agentic Commerce Orchestration</strong> service: a dedicated, Goofre™-certified ACO™ assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as the standard shifts. There is no obligation either way.</p></details>
       <details><summary>Why Logic Rays for AI readiness?</summary><p>Because we co-build the platform. Goofre™, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it.</p></details>
+      <details><summary>Which agentic commerce standards do you build to?</summary><p>The open standards the market is actually converging on: the <strong>Agentic Commerce Protocol (ACP)</strong> from OpenAI and Stripe, which powers agent checkout in ChatGPT; the <strong>Agent Payments Protocol (AP2)</strong> from Google and 60+ payment networks, for trusted machine-initiated payments; and the <strong>Model Context Protocol (MCP)</strong> from Anthropic, for how agents access store data. Goofre™'s readiness engine measures your store against these standards and the structured-data foundations beneath them, so your readiness is held to a public bar, not our opinion.</p></details>
     </div>
   </section>
 
@@ -680,9 +770,15 @@
       <div class="foot-col">
         <h4>This service</h4>
         <a href="#what">What is agentic commerce</a>
+        <a href="#shift">Why SEO isn't enough</a>
         <a href="#layers">The 5 layers</a>
         <a href="#report">The free audit</a>
-        <a href="#book">Book a readiness audit</a>
+      </div>
+      <div class="foot-col">
+        <h4>Agentic commerce</h4>
+        <a href="#how">The ACO™ service</a>
+        <a href="#standards">Standards: ACP, AP2, MCP</a>
+        <a href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco-footer">About Goofre™</a>
       </div>
       <div class="foot-col">
         <h4>Logic Rays</h4>
@@ -690,13 +786,10 @@
         <a href="https://www.logicrays.com">All services</a>
         <a href="https://www.logicrays.com">Contact us</a>
       </div>
-      <div class="foot-col">
-        <h4>Platform</h4>
-        <a href="https://reachviveksai-cloud.github.io/goofre-landing/">Goofre™ for developers</a>
-      </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Logic Rays. In partnership with Goofre.</span>
+      <span>© 2026 Logic Rays. In partnership with Goofre™.</span>
+      <span>Built to the emerging agentic-commerce standards: ACP · AP2 · MCP.</span>
       <span>"Agentic Commerce Orchestrator™" is a trademark of Goofre.</span>
     </div>
   </div>
