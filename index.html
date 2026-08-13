@@ -288,8 +288,8 @@
     <a class="lr-logo" href="https://www.logicrays.com"><span class="mark"></span>Logic<b>Rays</b></a>
     <nav class="lr-nav">
       <a class="hide-sm" href="https://www.logicrays.com">Home</a>
-      <a class="active" href="#top">Services</a>
-      <a class="hide-sm" href="https://www.logicrays.com">Hire Developers</a>
+      <a class="hide-sm" href="https://www.logicrays.com/services">Services</a>
+      <a class="active" href="#top">Agentic Commerce Orchestrator&trade;</a>
       <a class="hide-sm" href="https://www.logicrays.com">Company</a>
       <a class="btn btn-primary" style="padding:.6rem 1.3rem;font-size:.9rem;" href="https://cal.com/logicrays?src=lr-aco">Book free audit</a>
     </nav>
@@ -359,7 +359,7 @@
         </p>
       </div>
       <figure class="panel" style="margin:0;">
-        <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img"
+        <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img"
              aria-label="A shopper asks an AI agent, which buys from an AI-ready store and silently skips the stores it cannot read">
           <rect class="d-box" x="20" y="130" width="130" height="46"/>
           <text class="d-label strong" x="85" y="150" text-anchor="middle">Shopper</text>
@@ -369,18 +369,19 @@
           <text class="d-label coral" x="258" y="150" text-anchor="middle">AI agent</text>
           <text class="d-label dim" x="258" y="166" text-anchor="middle">finds · verifies · buys</text>
 
-          <!-- winning path: agent up to the ready store, arrowhead landing on the box's bottom edge -->
-          <path class="d-line green" d="M322 140 C 344 116, 352 106, 360 100"/>
-          <polygon points="360,88 353,101 367,101" fill="#008A60"/>
-          <rect class="d-box green" x="330" y="36" width="120" height="52"/>
-          <text class="d-label green" x="390" y="58" text-anchor="middle">Ready store</text>
-          <text class="d-label dim" x="390" y="74" text-anchor="middle">✓ wins the sale</text>
+          <!-- the agent forks: it buys from the ready store, and silently skips the rest -->
+          <!-- winning branch: solid green elbow entering the ready store from its left edge, clear of the label -->
+          <path class="d-line green" d="M318 153 L330 153 L330 62 L342 62"/>
+          <polygon points="350,62 342,57.5 342,66.5" fill="#008A60"/>
+          <rect class="d-box green" x="350" y="36" width="120" height="52"/>
+          <text class="d-label green" x="410" y="58" text-anchor="middle">Ready store</text>
+          <text class="d-label dim" x="410" y="74" text-anchor="middle">✓ wins the sale</text>
 
-          <!-- skipped path: a thin dashed line that trails off to the box, no arrowhead -->
-          <path class="d-line dash" d="M322 166 C 344 190, 352 202, 360 216"/>
-          <rect class="d-box dim" x="330" y="218" width="120" height="52"/>
-          <text class="d-label dim" x="390" y="240" text-anchor="middle">Every other store</text>
-          <text class="d-label dim" x="390" y="256" text-anchor="middle">✗ skipped, unseen</text>
+          <!-- skipped branch: a faint dashed elbow that trails off, never reaching the box -->
+          <path class="d-line dash" d="M318 153 L330 153 L330 244 L344 244"/>
+          <rect class="d-box dim" x="350" y="218" width="120" height="52"/>
+          <text class="d-label dim" x="410" y="240" text-anchor="middle">Every other store</text>
+          <text class="d-label dim" x="410" y="256" text-anchor="middle">✗ skipped, unseen</text>
         </svg>
         <figcaption class="cap">The new path to purchase. The agent never shows the shopper the stores it skipped — there is no page two to be found on.</figcaption>
       </figure>
