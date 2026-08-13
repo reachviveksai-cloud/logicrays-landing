@@ -364,16 +364,20 @@
           <rect class="d-box" x="20" y="130" width="130" height="46"/>
           <text class="d-label strong" x="85" y="150" text-anchor="middle">Shopper</text>
           <text class="d-label dim" x="85" y="166" text-anchor="middle">asks in plain words</text>
-          <line class="d-line" x1="150" y1="153" x2="196" y2="153"/><polygon points="196,153 188,148 188,158" fill="#BDB4A9"/>
+          <line class="d-line" x1="150" y1="153" x2="192" y2="153"/><polygon points="196,153 188,148.5 188,157.5" fill="#BDB4A9"/>
           <rect class="d-box" x="198" y="128" width="120" height="50" style="stroke:var(--coral);fill:var(--coral-soft);"/>
           <text class="d-label coral" x="258" y="150" text-anchor="middle">AI agent</text>
           <text class="d-label dim" x="258" y="166" text-anchor="middle">finds · verifies · buys</text>
-          <path class="d-line green" d="M318 140 C 360 96, 380 70, 410 66"/>
-          <polygon points="410,66 400,62 402,72" fill="#008A60"/>
+
+          <!-- winning path: agent up to the ready store, arrowhead landing on the box's bottom edge -->
+          <path class="d-line green" d="M322 140 C 344 116, 352 106, 360 100"/>
+          <polygon points="360,88 353,101 367,101" fill="#008A60"/>
           <rect class="d-box green" x="330" y="36" width="120" height="52"/>
           <text class="d-label green" x="390" y="58" text-anchor="middle">Ready store</text>
           <text class="d-label dim" x="390" y="74" text-anchor="middle">✓ wins the sale</text>
-          <path class="d-line dash" d="M318 166 C 360 210, 380 236, 410 240"/>
+
+          <!-- skipped path: a thin dashed line that trails off to the box, no arrowhead -->
+          <path class="d-line dash" d="M322 166 C 344 190, 352 202, 360 216"/>
           <rect class="d-box dim" x="330" y="218" width="120" height="52"/>
           <text class="d-label dim" x="390" y="240" text-anchor="middle">Every other store</text>
           <text class="d-label dim" x="390" y="256" text-anchor="middle">✗ skipped, unseen</text>
