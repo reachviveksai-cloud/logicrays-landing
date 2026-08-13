@@ -276,15 +276,20 @@
 
   /* ── Goofre co-build band ─────────────────────────────────────────── */
   /* compact capability signal — Goofre as credibility, not co-promotion */
-  .cobuild-slim { display: grid; grid-template-columns: auto 1fr auto; gap: 1.6rem; align-items: center;
-    background: var(--warm); border: 1px solid var(--rule); border-left: 4px solid var(--green); border-radius: 14px; padding: 1.5rem 1.8rem; }
-  .cobuild-slim .cb-mark { width: 3rem; height: 3rem; border-radius: 12px; background: linear-gradient(135deg, var(--green), var(--green-bright));
-    display: flex; align-items: center; justify-content: center; color: #05271C; font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; flex: none; }
-  .cobuild-slim h3 { margin: 0 0 .25rem; font-size: 1.12rem; }
-  .cobuild-slim p { margin: 0; font-size: .92rem; max-width: 70ch; }
-  .cobuild-slim .cb-link { white-space: nowrap; font-size: .88rem; font-weight: 600; color: var(--green); text-decoration: none; }
-  .cobuild-slim .cb-link:hover { text-decoration: underline; }
-  @media (max-width: 720px){ .cobuild-slim { grid-template-columns: 1fr; gap: 1rem; } .cobuild-slim .cb-mark { display: none; } }
+  .cobuild-slim { display: grid; grid-template-columns: 1fr auto; gap: 2.2rem; align-items: center;
+    background: var(--warm); border: 1px solid var(--rule); border-left: 4px solid var(--green); border-radius: 14px; padding: 1.6rem 1.9rem; }
+  .cobuild-slim h3 { margin: 0 0 .3rem; font-size: 1.12rem; }
+  .cobuild-slim p { margin: 0; font-size: .92rem; max-width: 72ch; }
+  /* CTA = the real Goofre wordmark lockup, as used on goofre.com */
+  .cb-logo { display: flex; flex-direction: column; align-items: flex-start; gap: .6rem; white-space: nowrap;
+    text-decoration: none; border: 1px solid var(--rule); border-radius: 12px; background: var(--surface);
+    padding: .95rem 1.15rem; transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+  .cb-logo:hover { border-color: var(--green); box-shadow: 0 10px 24px -12px rgba(0,138,96,.5); transform: translateY(-1px); }
+  .cb-logo .cb-wordmark { font-weight: 700; letter-spacing: -.015em; font-size: 1.2rem; color: var(--ink); line-height: 1.05; }
+  .cb-logo .cb-wordmark small { display: block; font-size: .6rem; letter-spacing: .11em; text-transform: uppercase;
+    color: var(--ink-3); font-weight: 600; margin-top: .2rem; }
+  .cb-logo .cb-go { font-size: .8rem; font-weight: 600; color: var(--green); }
+  @media (max-width: 720px){ .cobuild-slim { grid-template-columns: 1fr; gap: 1.3rem; } .cb-logo { align-self: stretch; } }
 
   /* ── FAQ ──────────────────────────────────────────────────────────── */
   .faq details { border-bottom: 1px solid var(--rule); }
@@ -620,14 +625,17 @@
   <!-- ══════════ 06 · GOOFRE CO-BUILD ══════════ -->
   <section>
     <div class="cobuild-slim">
-      <span class="cb-mark" aria-hidden="true">G</span>
       <div>
         <h3>We co-built the technology to solve this. We didn't just buy a tool.</h3>
         <p>The audit and the fixes run on <strong>Goofre™</strong>, an agentic-commerce platform we
         co-engineered. So the team readying your store is the same team building the standard it is
         measured against — a claim no agency reselling someone else's plugin can make.</p>
       </div>
-      <a class="cb-link" href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco">About Goofre™ →</a>
+      <a class="cb-logo" href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco"
+         aria-label="About Goofre, Agentic Commerce Orchestrator">
+        <span class="cb-wordmark">Goofre&trade;<small>Agentic Commerce Orchestrator&trade;</small></span>
+        <span class="cb-go">About Goofre&trade; <span aria-hidden="true">&rarr;</span></span>
+      </a>
     </div>
   </section>
 
