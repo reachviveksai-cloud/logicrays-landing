@@ -49,11 +49,22 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "AI Readiness Audit & Agentic Commerce Service",
-  "serviceType": "Agentic commerce readiness for ecommerce stores",
-  "description": "A free AI readiness audit of your online store across five layers, graded A to F, followed by fixed-scope remediation and ongoing monitoring, so AI shopping agents can find, read, trust and buy from your store.",
+  "name": "Agentic Commerce Orchestration (ACO) Service",
+  "serviceType": "Agentic Commerce Orchestration for ecommerce stores",
+  "description": "Agentic Commerce Orchestration is the successor to the SEO budget: the managed discipline of making an online store readable, trusted and buyable by AI shopping agents. Logic Rays begins with a free AI readiness audit graded A to F across five layers, then runs an ongoing service: a dedicated, Goofre-certified Agentic Commerce Orchestrator (ACO) assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as agents, platforms and standards shift.",
   "provider": { "@type": "Organization", "name": "Logic Rays", "url": "https://www.logicrays.com" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free AI Shopping Readiness Report, graded A to F across five layers." }
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Agentic Commerce Orchestration engagement",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free AI readiness audit and graded report" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dedicated Goofre-certified Agentic Commerce Orchestrator (ACO)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly readiness reports" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bi-weekly working sessions" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Continuous agentic-commerce orchestration" } }
+    ]
+  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free AI Shopping Readiness Report, graded A to F across five layers, to begin the Agentic Commerce Orchestration engagement." }
 }
 </script>
 <script type="application/ld+json">
@@ -65,7 +76,7 @@
     { "@type": "Question", "name": "Are AI agents really buying from online stores today?", "acceptedAnswer": { "@type": "Answer", "text": "The AI crawlers are already on your store. GPTBot, PerplexityBot and Google's AI crawlers visit ecommerce sites today, and AI assistants already recommend specific products and stores. The stores that are readable and trustworthy now are the ones agents learn to recommend first. The audit is free, so the cost of knowing where you stand is zero." } },
     { "@type": "Question", "name": "We already invest in SEO. Isn't that enough?", "acceptedAnswer": { "@type": "Answer", "text": "SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets your store bought from. Being mentioned is the first two layers of a five-layer problem. An agent that finds you but cannot verify your identity, read your return terms or complete your checkout recommends a competitor it can. Most stores we audit are strong on visibility and empty on buyability." } },
     { "@type": "Question", "name": "Do I need to rebuild my store or change platforms?", "acceptedAnswer": { "@type": "Answer", "text": "No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters." } },
-    { "@type": "Question", "name": "What does the free audit include, and what happens after?", "acceptedAnswer": { "@type": "Answer", "text": "We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally; others engage us for a fixed-scope readiness project. There is no obligation either way." } },
+    { "@type": "Question", "name": "What does the free audit include, and what happens after?", "acceptedAnswer": { "@type": "Answer", "text": "We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally. Others engage our Agentic Commerce Orchestration service: a dedicated, Goofre-certified ACO assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as the standard shifts. There is no obligation either way." } },
     { "@type": "Question", "name": "Why Logic Rays for AI readiness?", "acceptedAnswer": { "@type": "Answer", "text": "Because we co-build the platform. Goofre, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it." } }
   ]
 }
@@ -138,7 +149,8 @@
   .lr-nav a { color: var(--ink); text-decoration: none; }
   .lr-nav a.active { color: var(--coral); }
   .lr-nav .crumb { font-size: .72rem; color: var(--ink-3); font-weight: 500; }
-  @media (max-width: 860px){ .lr-nav .hide-sm { display: none; } }
+  .lr-nav .active .sm { display: none; }
+  @media (max-width: 860px){ .lr-nav .hide-sm { display: none; } .lr-nav .active .lg { display: none; } .lr-nav .active .sm { display: inline; } }
 
   /* ── Hero ─────────────────────────────────────────────────────────── */
   .hero { padding: 4.5rem 0 4rem; }
@@ -230,6 +242,38 @@
   .step .dur { font-size: .74rem; color: var(--ink-3); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; display: block; margin-top: 1rem; }
   .step p { font-size: .92rem; margin: 0; }
 
+  /* ── 05 · The service: old SEO budget → new ACO service ───────────── */
+  .thennow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.8rem 0 0; }
+  .tn { border: 1px solid var(--rule); border-radius: 16px; padding: 1.5rem 1.6rem; background: var(--surface); }
+  .tn.now { border-color: var(--green); background: var(--green-soft); }
+  .tn-tag { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em;
+    display: inline-block; margin: 0 0 .9rem; padding: .2rem .6rem; border-radius: 999px; }
+  .tn.then .tn-tag { color: var(--ink-3); background: var(--warm); border: 1px solid var(--rule); }
+  .tn.now .tn-tag { color: #05271C; background: linear-gradient(135deg, var(--green), var(--green-bright)); }
+  .tn h3 { margin: 0 0 .9rem; font-size: 1.14rem; }
+  .tn ul { list-style: none; margin: 0; padding: 0; }
+  .tn li { position: relative; padding: .4rem 0 .4rem 1.5rem; font-size: .92rem; border-top: 1px solid var(--rule); }
+  .tn li:first-child { border-top: 0; }
+  .tn li::before { position: absolute; left: 0; top: .4rem; font-weight: 700; }
+  .tn.then li::before { content: "·"; color: var(--ink-3); }
+  .tn.now li::before { content: "→"; color: var(--green); }
+  .tn li b { color: var(--ink); }
+
+  .engage { display: grid; grid-template-columns: 1.12fr .88fr; gap: 2.4rem; align-items: center; margin-top: 1.2rem;
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 2rem 2.1rem;
+    box-shadow: 0 24px 50px -34px rgba(32,20,10,.2); }
+  .engage-list { list-style: none; margin: 0; padding: 0; }
+  .engage-list li { display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: start;
+    padding: .85rem 0; border-top: 1px solid var(--rule); }
+  .engage-list li:first-child { border-top: 0; padding-top: 0; }
+  .engage-list .ck { width: 1.55rem; height: 1.55rem; border-radius: 50%; background: var(--green-soft); color: var(--green);
+    display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; margin-top: .1rem; flex: none; }
+  .engage-list b { display: block; color: var(--ink); font-size: .98rem; margin-bottom: .1rem; }
+  .engage-list span { font-size: .88rem; color: var(--ink-2); line-height: 1.5; }
+  .engage-aside h3 { font-size: 1.18rem; margin: 0 0 .7rem; max-width: 20ch; }
+  .engage-aside p { font-size: .92rem; margin: 0 0 1.3rem; }
+  @media (max-width: 760px){ .thennow, .engage { grid-template-columns: 1fr; } .engage { padding: 1.6rem; gap: 1.6rem; } }
+
   /* ── Goofre co-build band ─────────────────────────────────────────── */
   /* compact capability signal — Goofre as credibility, not co-promotion */
   .cobuild-slim { display: grid; grid-template-columns: auto 1fr auto; gap: 1.6rem; align-items: center;
@@ -289,7 +333,7 @@
     <nav class="lr-nav">
       <a class="hide-sm" href="https://www.logicrays.com">Home</a>
       <a class="hide-sm" href="https://www.logicrays.com/services">Services</a>
-      <a class="active" href="#top">Agentic Commerce Orchestrator&trade;</a>
+      <a class="active" href="#top"><span class="lg">Agentic Commerce Orchestrator&trade;</span><span class="sm">ACO&trade;</span></a>
       <a class="hide-sm" href="https://www.logicrays.com">Company</a>
       <a class="btn btn-primary" style="padding:.6rem 1.3rem;font-size:.9rem;" href="https://cal.com/logicrays?src=lr-aco">Book free audit</a>
     </nav>
@@ -509,33 +553,66 @@
 <div class="shell">
   <!-- ══════════ 05 · HOW IT WORKS ══════════ -->
   <section id="how">
-    <p class="eyebrow">05 · How it works</p>
-    <h2>Audit. Fix. Stay ready.</h2>
-    <p style="max-width:64ch;">
-      You don't need an engineering team, and you don't need to re-platform. The work happens on
-      your existing Magento store, scoped by the audit itself.
+    <p class="eyebrow">05 · The service</p>
+    <h2 style="max-width:22ch;">The SEO budget has a successor. It's called ACO™.</h2>
+    <p style="max-width:66ch;">
+      For over a decade, being found meant an <strong>SEO budget</strong>. Now the buyer is an AI
+      agent, and being <em>bought from</em> needs its own discipline: <strong>Agentic Commerce
+      Orchestration</strong>. Logic Rays runs it for you as a managed service. A dedicated,
+      Goofre™-certified <strong>Agentic Commerce Orchestrator™ (ACO™)</strong> is assigned to your
+      store and keeps it ready as the standard keeps moving.
     </p>
-    <div class="steps">
-      <div class="step">
-        <div class="sn">1</div>
-        <h3>Audit — free</h3>
-        <p>We scan your live store, walk you through the graded report, and hand you the full gap
-        list, whether or not you ever hire us.</p>
-        <span class="dur">Days · no obligation</span>
+
+    <div class="thennow">
+      <div class="tn then">
+        <span class="tn-tag">Then · the search era</span>
+        <h3>You bought an SEO budget.</h3>
+        <ul>
+          <li>Goal: rank in a list of blue links</li>
+          <li>Win condition: the <b>click</b></li>
+          <li>Bought as a line item, tuned a few times a year</li>
+        </ul>
       </div>
-      <div class="step">
-        <div class="sn">2</div>
-        <h3>Fix the gaps</h3>
-        <p>A fixed-scope readiness project: the Goofre™ storefront module installed and configured,
-        markup and policy gaps closed, identity verified, your score visibly lifted.</p>
-        <span class="dur">Fixed scope · ~90 days</span>
+      <div class="tn now">
+        <span class="tn-tag">Now · the agent era</span>
+        <h3>You engage an ACO™.</h3>
+        <ul>
+          <li>Goal: be readable, trusted and <b>buyable by agents</b></li>
+          <li>Win condition: the <b>sale an agent completes</b></li>
+          <li>Run continuously, because the standard shifts every month</li>
+        </ul>
       </div>
-      <div class="step">
-        <div class="sn">3</div>
-        <h3>Stay ready</h3>
-        <p>Agentic commerce is a moving target — standards shift monthly. Scheduled re-scans, drift
-        alerts, and a report you can see every month.</p>
-        <span class="dur">Ongoing · monthly report</span>
+    </div>
+
+    <div class="engage">
+      <ul class="engage-list">
+        <li><span class="ck">✓</span><div>
+          <b>A dedicated ACO™ assigned to your store</b>
+          <span>A Goofre™-certified Agentic Commerce Orchestrator™ who owns your readiness. One accountable person, not a ticket queue.</span>
+        </div></li>
+        <li><span class="ck">✓</span><div>
+          <b>A full readiness audit and graded report</b>
+          <span>Your baseline across all five layers, with every gap named in plain English, its fix, and who owns it.</span>
+        </div></li>
+        <li><span class="ck">✓</span><div>
+          <b>Weekly readiness reports</b>
+          <span>Your score, what changed on your store, what we fixed, and exactly what an agent sees this week.</span>
+        </div></li>
+        <li><span class="ck">✓</span><div>
+          <b>Bi-weekly working sessions</b>
+          <span>A standing call with your ACO™ to review progress and what is shifting across agentic commerce.</span>
+        </div></li>
+        <li><span class="ck">✓</span><div>
+          <b>Continuous orchestration against the roadmap</b>
+          <span>As agents, platforms and standards move, your ACO™ keeps you ahead. You stay ready, not catching up.</span>
+        </div></li>
+      </ul>
+      <div class="engage-aside">
+        <h3>The target keeps moving. So does the service.</h3>
+        <p>Agentic commerce is being rewritten in real time: new agents, new checkout rails, new
+        trust signals every quarter. Goofre™ and Logic Rays build against that roadmap continuously,
+        so the work your store gets today is what the next wave of agents will reward.</p>
+        <a class="btn btn-primary" href="https://cal.com/logicrays?src=lr-aco">Book your free audit</a>
       </div>
     </div>
   </section>
@@ -563,7 +640,7 @@
       <details><summary>Are AI agents really buying from online stores today?</summary><p>The AI crawlers are already on your store. GPTBot, PerplexityBot and Google's AI crawlers visit ecommerce sites today, and AI assistants already recommend specific products and stores. The stores that are readable and trustworthy now are the ones agents learn to recommend first. The audit is free, so the cost of knowing where you stand is zero.</p></details>
       <details><summary>We already invest in SEO. Isn't that enough?</summary><p>SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets your store bought from. Being mentioned is the first two layers of a five-layer problem; an agent that finds you but cannot verify your identity, read your return terms or complete your checkout recommends a competitor it can. Most stores we audit are strong on visibility and empty on buyability.</p></details>
       <details><summary>Do I need to rebuild my store or change platforms?</summary><p>No. The work happens on your existing Magento store: the Goofre™ storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters.</p></details>
-      <details><summary>What does the free audit include, and what happens after?</summary><p>We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally; others engage us for a fixed-scope readiness project. There is no obligation either way.</p></details>
+      <details><summary>What does the free audit include, and what happens after?</summary><p>We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally. Others engage our <strong>Agentic Commerce Orchestration</strong> service: a dedicated, Goofre™-certified ACO™ assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as the standard shifts. There is no obligation either way.</p></details>
       <details><summary>Why Logic Rays for AI readiness?</summary><p>Because we co-build the platform. Goofre™, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it.</p></details>
     </div>
   </section>
