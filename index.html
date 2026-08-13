@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
 <!-- ═══════════════════════════════════════════════════════════════════════
-  LOGIC RAYS — AI READINESS / AGENTIC COMMERCE SERVICE PAGE  (v2, emerald)
-  Redesigned 2026-08-12 against the JV GTM strategy (two doors, one funnel).
-  Supersedes the violet v1 (backed up as logicrays-landing-v1-violet.html).
+  LOGIC RAYS — ACO SERVICE PAGE  (v3, native Logic Rays brand)
+  Rebuilt 2026-08-13 to live INSIDE logicrays.com's Services menu. Adopts the
+  real Logic Rays design system extracted from the live site:
+    · Font: Poppins (body) / Euclid Circular (headings, falls back to Poppins)
+    · Coral #D03007 = the Logic Rays brand accent (primary identity)
+    · Green #008A60 → #4EE0B8 = the readiness / Goofre accent (their pill CTA
+      colour, and a nod to Goofre's emerald)
+    · Warm tan #C89B76 = section eyebrow labels
+    · Warm near-black #202020 on white; black footer
+  The header + footer here are REPRESENTATIVE so the preview reads in context;
+  the real integration injects this body into the live Logic Rays template.
 
-  HANDOFF — fill before launch:
-    [ ] Two proof figures marked [X] — stores built, certified developers.
-        They are load-bearing; use real, specific numbers.
-    [ ] Scheduler URL — every CTA points at https://cal.com/logicrays?src=lr-aco
-        (placeholder). Keep the ?src= param: it is the door-level attribution
-        the GTM plan depends on.
-    [ ] og:image — needs a real 1200×630 asset at /assets/aco-og.jpg.
-    [ ] Canonical URL — assumed https://www.logicrays.com/aco-service; update
-        the <link rel="canonical">, og:url and both JSON-LD blocks if the
-        final path differs.
-    [ ] When the public Goofre scanner ships with the goofre.com redo, flip
-        CTA copy from "Book your free AI readiness audit" to "Run your free
-        AI readiness audit" and point at the scanner. Nothing else changes.
-    [ ] Keep noindex ONLY on the GitHub Pages preview — this file ships
-        without it deliberately.
+  Editorial rules (shared with goofre.com):
+    · Merchant-facing: simple "what is agentic commerce / your gap / talk to an
+      expert". The developer squeeze narrative stays on goofre.com only.
+    · The audit is never quantified (no check counts). Graded A–F, five layers.
+
+  HANDOFF, fill before launch:
+    [ ] Two proof figures marked [X] (stores built, certified developers).
+    [ ] Every CTA -> https://cal.com/logicrays?src=lr-aco (placeholder). Keep ?src=.
+    [ ] og:image 1200x630 at /assets/aco-og.jpg. Canonical path if not /aco-service.
+    [ ] Real logicrays.com header/footer replace the representative ones here.
+    [ ] noindex only on the preview deploy, never on production.
   ═══════════════════════════════════════════════════════════════════════ -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>AI Readiness Audit for Your Online Store | Agentic Commerce — Logic Rays</title>
-<meta name="description" content="AI agents from ChatGPT, Perplexity and Google are starting to shop. Get a free 29-check AI readiness audit of your Magento store — see what AI can find, trust and buy from. By Logic Rays, co-builders of the Goofre platform.">
+<title>AI Readiness for Your Online Store | Agentic Commerce — Logic Rays</title>
+<meta name="description" content="AI agents from ChatGPT, Perplexity and Google are starting to shop for your customers. Logic Rays makes your Magento store ready for them: found, trusted and buyable by AI. Book a free readiness audit. Co-builders of the Goofre agentic-commerce platform.">
 <link rel="canonical" href="https://www.logicrays.com/aco-service">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Logic Rays">
 <meta property="og:title" content="Your next customer isn't a person. It's their AI.">
-<meta property="og:description" content="Free 29-check AI readiness audit for your online store — see what AI shopping agents can find, trust and buy from, and what they skip.">
+<meta property="og:description" content="Get a free AI readiness audit of your online store — see what AI shopping agents can find, trust and buy from, and what they skip.">
 <meta property="og:url" content="https://www.logicrays.com/aco-service">
 <meta property="og:image" content="https://www.logicrays.com/assets/aco-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -43,18 +51,9 @@
   "@type": "Service",
   "name": "AI Readiness Audit & Agentic Commerce Service",
   "serviceType": "Agentic commerce readiness for ecommerce stores",
-  "description": "A free 29-check AI readiness audit of your online store, followed by fixed-scope remediation and ongoing monitoring — so AI shopping agents can find, read, trust and buy from your store.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Logic Rays",
-    "url": "https://www.logicrays.com"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "Free AI Shopping Readiness Report — 29 automated checks across five areas, graded A–F."
-  }
+  "description": "A free AI readiness audit of your online store across five layers, graded A to F, followed by fixed-scope remediation and ongoing monitoring, so AI shopping agents can find, read, trust and buy from your store.",
+  "provider": { "@type": "Organization", "name": "Logic Rays", "url": "https://www.logicrays.com" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free AI Shopping Readiness Report, graded A to F across five layers." }
 }
 </script>
 <script type="application/ld+json">
@@ -62,583 +61,565 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is agentic commerce?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Agentic commerce is shopping done by AI agents on a person's behalf. Instead of browsing stores, a shopper asks an AI assistant — and the assistant finds products, compares stores, checks stock, delivery and return terms, and completes the purchase. For a merchant, it means the visitor deciding whether to buy is increasingly a piece of software acting for a human." }
-    },
-    {
-      "@type": "Question",
-      "name": "Are AI agents really buying from online stores today?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The AI crawlers are already on your store — GPTBot, PerplexityBot and Google's AI crawlers visit ecommerce sites today, and AI assistants already recommend specific products and stores. Completed agent checkouts are earlier, but the stores that are readable and trustworthy now are the ones agents learn to recommend first. The audit is free, so the cost of knowing where you stand is zero." }
-    },
-    {
-      "@type": "Question",
-      "name": "We already invest in SEO — isn't that enough?",
-      "acceptedAnswer": { "@type": "Answer", "text": "SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets your store bought from. Being mentioned is layers one and two of a five-layer problem; an agent that finds you but cannot verify your identity, read your return terms or complete your checkout recommends a competitor it can. Most stores we audit are strong on visibility and empty on buyability." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this just adding schema markup to my site?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Markup is one layer of five. Full readiness also covers verified store identity, machine-readable return and shipping terms an agent can quote before buying, a checkout an agent can complete, and monitoring so it all keeps working. No markup plugin does that — it takes a platform, which is what the Goofre module and audit provide." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to rebuild my store or change platforms?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters." }
-    },
-    {
-      "@type": "Question",
-      "name": "What does the free audit include, and what happens after?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The audit runs 29 automated checks across five areas on your live store and produces a graded A–F report: every gap named in plain English, with its fix and who owns it — you, us, or automatic once connected. What happens next is your call: many merchants take the report and fix things internally; others engage us for a fixed-scope readiness project. There is no obligation either way." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why Logic Rays for AI readiness?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because we co-build the platform. Goofre — the audit standard, the storefront module for Magento and the orchestration layer behind this service — is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool; we ship it." }
-    }
+    { "@type": "Question", "name": "What is agentic commerce?", "acceptedAnswer": { "@type": "Answer", "text": "Agentic commerce is shopping done by AI agents on a person's behalf. Instead of browsing stores, a shopper asks an AI assistant, and the assistant finds products, compares stores, checks stock, delivery and return terms, and completes the purchase. For a merchant, it means the visitor deciding whether to buy is increasingly a piece of software acting for a human." } },
+    { "@type": "Question", "name": "Are AI agents really buying from online stores today?", "acceptedAnswer": { "@type": "Answer", "text": "The AI crawlers are already on your store. GPTBot, PerplexityBot and Google's AI crawlers visit ecommerce sites today, and AI assistants already recommend specific products and stores. The stores that are readable and trustworthy now are the ones agents learn to recommend first. The audit is free, so the cost of knowing where you stand is zero." } },
+    { "@type": "Question", "name": "We already invest in SEO. Isn't that enough?", "acceptedAnswer": { "@type": "Answer", "text": "SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets your store bought from. Being mentioned is the first two layers of a five-layer problem. An agent that finds you but cannot verify your identity, read your return terms or complete your checkout recommends a competitor it can. Most stores we audit are strong on visibility and empty on buyability." } },
+    { "@type": "Question", "name": "Do I need to rebuild my store or change platforms?", "acceptedAnswer": { "@type": "Answer", "text": "No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters." } },
+    { "@type": "Question", "name": "What does the free audit include, and what happens after?", "acceptedAnswer": { "@type": "Answer", "text": "We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally; others engage us for a fixed-scope readiness project. There is no obligation either way." } },
+    { "@type": "Question", "name": "Why Logic Rays for AI readiness?", "acceptedAnswer": { "@type": "Answer", "text": "Because we co-build the platform. Goofre, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it." } }
   ]
 }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Logic Rays", "item": "https://www.logicrays.com" },
-    { "@type": "ListItem", "position": 2, "name": "AI Readiness & Agentic Commerce", "item": "https://www.logicrays.com/aco-service" }
-  ]
-}
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Logic Rays", "item": "https://www.logicrays.com" },
+  { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.logicrays.com/services" },
+  { "@type": "ListItem", "position": 3, "name": "AI Readiness & Agentic Commerce", "item": "https://www.logicrays.com/aco-service" }
+]}
 </script>
 </head>
 <body>
 
 <style>
-  /* ── Tokens — committed light page (embeds in Logic Rays' light site).
-       Emerald matches the Goofre product surfaces, so the journey from this
-       page → audit → reports never changes brand temperature. ───────────── */
+  /* ── Logic Rays design system (extracted from logicrays.com) ─────────── */
   :root {
-    --paper:   #FBFBF9;
+    --paper:   #FFFFFF;
+    --warm:    #FBF8F5;   /* warm off-white section band */
     --surface: #FFFFFF;
-    --ink:     #17171A;
-    --ink-2:   #52525B;
-    --ink-3:   #85858D;
-    --rule:    #E6E6E2;
-    --tint:    #EAF6F0;
-    --brand:   #047857;
-    --brand-deep: #064E3B;
-    --brand-bright: #34D399;
-    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --ink:     #202020;   /* warm near-black */
+    --ink-2:   #5C554E;   /* warm grey body */
+    --ink-3:   #8A837B;
+    --rule:    #ECE6DF;   /* warm hairline */
+    --coral:   #D03007;   /* Logic Rays primary brand accent */
+    --coral-2: #E54535;
+    --coral-soft: rgba(208,48,7,.07);
+    --tan:     #B98A5E;   /* section eyebrow labels (slightly deepened for contrast) */
+    --green:   #008A60;   /* readiness / Goofre accent */
+    --green-2: #34C58C;
+    --green-bright: #4EE0B8;
+    --green-soft: rgba(0,138,96,.08);
+    --amber:   #E6960A;
+    --ink-inv: #FFFFFF;
+    --footer:  #101010;
+    --font: "Poppins", "Euclid Circular A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: var(--font-sans); font-size: 17px; line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+    margin: 0; background: var(--paper); color: var(--ink-2);
+    font-family: var(--font); font-size: 16.5px; line-height: 1.7; -webkit-font-smoothing: antialiased;
   }
-  .shell { max-width: 1060px; margin: 0 auto; padding: 0 1.5rem; }
-  section { padding: 4.5rem 0 0; }
-  section:last-of-type { padding-bottom: 5rem; }
+  .shell { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 5rem 0; }
 
-  .eyebrow {
-    font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em;
-    text-transform: uppercase; color: var(--brand); font-weight: 600; margin: 0 0 1rem;
-  }
-  h1 {
-    font-size: clamp(2.1rem, 5.5vw, 3.4rem); line-height: 1.06; letter-spacing: -.03em;
-    font-weight: 760; margin: 0 0 1.1rem; text-wrap: balance; max-width: 17ch;
-  }
-  h2 {
-    font-size: clamp(1.45rem, 3vw, 1.95rem); line-height: 1.18; letter-spacing: -.022em;
-    font-weight: 720; margin: 0 0 .9rem; text-wrap: balance; max-width: 26ch;
-  }
-  h3 { font-size: 1.05rem; font-weight: 680; letter-spacing: -.008em; margin: 1.6rem 0 .4rem; }
-  p { color: var(--ink-2); max-width: 66ch; margin: 0 0 1rem; }
-  strong { color: var(--ink); font-weight: 650; }
-  a { color: var(--brand); text-underline-offset: 2px; }
-  a:focus-visible, .cta:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+  .eyebrow { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--tan); font-weight: 600; margin: 0 0 1rem; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.08; letter-spacing: -.02em; font-weight: 700; color: var(--ink); margin: 0 0 1.2rem; text-wrap: balance; }
+  h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.15; letter-spacing: -.015em; font-weight: 700; color: var(--ink); margin: 0 0 1rem; text-wrap: balance; max-width: 24ch; }
+  h3 { font-size: 1.12rem; font-weight: 600; color: var(--ink); margin: 0 0 .5rem; }
+  p { max-width: 62ch; margin: 0 0 1.1rem; }
+  strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--coral); }
 
-  .cta {
-    display: inline-flex; align-items: center; gap: .55rem;
-    background: var(--brand); color: #fff; text-decoration: none;
-    font-weight: 640; font-size: 1rem; padding: .85rem 1.5rem; border-radius: 10px;
-    transition: background .15s ease;
-  }
-  .cta:hover { background: var(--brand-deep); }
-  .cta-note { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-3); margin-top: .8rem; }
+  .btn { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--font); font-weight: 600; font-size: 1rem; text-decoration: none; cursor: pointer; border: 0; transition: transform .12s ease, box-shadow .15s ease, background .15s; }
+  .btn-primary { background: linear-gradient(135deg, var(--green), var(--green-bright)); color: #05271C; padding: .95rem 1.8rem; border-radius: 999px; box-shadow: 0 8px 22px -8px rgba(0,138,96,.55); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -8px rgba(0,138,96,.6); }
+  .btn-ghost { background: var(--coral-soft); color: var(--coral); padding: .95rem 1.6rem; border-radius: 12px; }
+  .btn-ghost:hover { background: rgba(208,48,7,.12); }
+  .btn:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
 
-  /* ── Header ─────────────────────────────────────────────────────────── */
-  header.site {
-    border-bottom: 1px solid var(--rule); background: var(--surface);
-  }
-  header.site .shell {
-    display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem;
-  }
-  .wordmark { font-weight: 760; letter-spacing: -.02em; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
-  .wordmark span { color: var(--brand); }
-  .header-cta { font-size: .9rem; font-weight: 620; color: var(--brand); text-decoration: none; }
+  /* ── Representative header (real logicrays.com header replaces this) ──── */
+  header.site { border-bottom: 1px solid var(--rule); background: var(--surface); position: sticky; top: 0; z-index: 40; }
+  header.site .shell { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 1rem; }
+  .lr-logo { display: flex; align-items: center; gap: .55rem; font-weight: 800; font-size: 1.4rem; letter-spacing: -.02em; color: var(--ink); text-decoration: none; }
+  .lr-logo .mark { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--coral), #F26D3D); display: inline-block; position: relative; }
+  .lr-logo .mark::after { content: ""; position: absolute; inset: 8px 8px auto auto; width: 8px; height: 8px; border-radius: 50%; background: #fff; top: 7px; right: 7px; }
+  .lr-logo b { color: var(--coral); font-weight: 800; }
+  .lr-nav { display: flex; align-items: center; gap: 1.7rem; font-size: .95rem; font-weight: 500; }
+  .lr-nav a { color: var(--ink); text-decoration: none; }
+  .lr-nav a.active { color: var(--coral); }
+  .lr-nav .crumb { font-size: .72rem; color: var(--ink-3); font-weight: 500; }
+  @media (max-width: 860px){ .lr-nav .hide-sm { display: none; } }
 
-  /* ── Hero ───────────────────────────────────────────────────────────── */
-  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: center; padding: 4.5rem 0 4rem; }
-  .hero-sub { font-size: 1.12rem; max-width: 54ch; }
+  /* ── Hero ─────────────────────────────────────────────────────────── */
+  .hero { padding: 4.5rem 0 4rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 3.2rem; align-items: center; }
+  .hero-sub { font-size: 1.14rem; max-width: 46ch; }
+  .hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; margin: 1.9rem 0 .9rem; }
+  .hero-note { font-size: .84rem; color: var(--ink-3); font-weight: 500; }
 
-  /* The agent screen — the one dark, saturated moment on the page. The
-     concept is demonstrated here before a single paragraph explains it. */
-  .agent-screen {
-    background: var(--brand-deep); border-radius: 16px; padding: 1.5rem 1.4rem 1.25rem;
-    color: #E7F6EF; box-shadow: 0 24px 60px rgba(6,78,59,.18);
-  }
-  .agent-screen .bar { display: flex; gap: .4rem; margin-bottom: 1.1rem; }
-  .agent-screen .bar i { width: .55rem; height: .55rem; border-radius: 50%; background: rgba(255,255,255,.22); }
-  .msg { max-width: 92%; padding: .65rem .9rem; border-radius: 12px; font-size: .88rem; line-height: 1.5; margin-bottom: .6rem; }
-  .msg.user { background: rgba(255,255,255,.12); margin-left: auto; border-bottom-right-radius: 4px; }
-  .msg.agent { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.1); border-bottom-left-radius: 4px; }
-  .msg.agent b { color: var(--brand-bright); font-weight: 650; }
-  .screen-caption {
-    font-size: .82rem; color: rgba(231,246,239,.75); margin: 1rem 0 0; line-height: 1.55;
-    border-top: 1px solid rgba(255,255,255,.12); padding-top: .9rem;
-  }
+  /* agent screen: the concept, shown before it's explained */
+  .agent-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 20px; box-shadow: 0 30px 60px -30px rgba(32,20,10,.28); overflow: hidden; }
+  .agent-top { display: flex; align-items: center; gap: .5rem; padding: .9rem 1.2rem; border-bottom: 1px solid var(--rule); background: var(--warm); }
+  .agent-top i { width: .6rem; height: .6rem; border-radius: 50%; background: #D9D2CA; }
+  .agent-top span { margin-left: .5rem; font-size: .78rem; color: var(--ink-3); font-weight: 500; }
+  .agent-body { padding: 1.3rem 1.3rem 1.5rem; display: flex; flex-direction: column; gap: .7rem; }
+  .msg { max-width: 90%; padding: .7rem 1rem; border-radius: 14px; font-size: .92rem; line-height: 1.5; }
+  .msg.user { align-self: flex-end; background: var(--coral-soft); color: var(--ink); border-bottom-right-radius: 4px; }
+  .msg.ai { align-self: flex-start; background: var(--warm); border: 1px solid var(--rule); border-bottom-left-radius: 4px; }
+  .msg.ai .win { display: inline-flex; align-items: center; gap: .35rem; color: var(--green); font-weight: 600; }
+  .agent-foot { border-top: 1px dashed var(--rule); margin-top: .3rem; padding: .9rem 1.3rem; font-size: .82rem; color: var(--ink-3); background: var(--surface); }
+  .agent-foot b { color: var(--ink); font-weight: 600; }
 
-  /* ── Proof bar ──────────────────────────────────────────────────────── */
-  .proof { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
-  .proof .shell { display: flex; flex-wrap: wrap; gap: .6rem 3rem; padding-top: 1.2rem; padding-bottom: 1.2rem; }
-  .proof b { display: block; font-size: 1.15rem; font-weight: 730; letter-spacing: -.02em; color: var(--ink); }
-  .proof small { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  /* ── Proof strip ──────────────────────────────────────────────────── */
+  .proof { background: var(--footer); }
+  .proof .shell { display: flex; flex-wrap: wrap; gap: 1.2rem 3.2rem; justify-content: space-between; padding-top: 1.7rem; padding-bottom: 1.7rem; }
+  .proof div { color: #fff; }
+  .proof b { display: block; font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; }
+  .proof b em { font-style: normal; color: var(--green-bright); }
+  .proof small { font-size: .78rem; color: #9A938B; letter-spacing: .04em; text-transform: uppercase; }
 
-  /* ── Diagram panels ─────────────────────────────────────────────────── */
-  .panel {
-    background: var(--surface); border: 1px solid var(--rule); border-radius: 14px;
-    padding: 2rem 2rem 1.6rem; margin: 1.8rem 0 0;
-  }
-  .panel figcaption { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-3); margin-top: 1.1rem; max-width: 70ch; line-height: 1.6; }
+  /* ── Section band alternation ─────────────────────────────────────── */
+  .band { background: var(--warm); }
+
+  /* diagram panel */
+  .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 2rem; box-shadow: 0 20px 44px -32px rgba(32,20,10,.22); }
   .panel svg { width: 100%; height: auto; display: block; }
-  .d-label { font-family: var(--font-mono); font-size: 11.5px; fill: var(--ink-2); }
+  .cap { font-size: .84rem; color: var(--ink-3); margin-top: 1rem; max-width: 74ch; }
+  .d-label { font-family: var(--font); font-size: 12px; fill: var(--ink-2); font-weight: 500; }
   .d-label.strong { fill: var(--ink); font-weight: 600; }
-  .d-label.brand { fill: var(--brand); font-weight: 600; }
-  .d-label.dim { fill: var(--ink-3); }
-  .d-box { fill: var(--surface); stroke: var(--ink-2); stroke-width: 1.4; rx: 9; }
-  .d-box.brand { stroke: var(--brand); fill: var(--tint); }
-  .d-box.dim { stroke: var(--rule); fill: var(--paper); }
-  .d-line { stroke: var(--ink-3); stroke-width: 1.4; fill: none; }
-  .d-line.brand { stroke: var(--brand); stroke-width: 1.8; }
-  .d-line.dashed { stroke-dasharray: 4 5; }
+  .d-label.green { fill: var(--green); font-weight: 600; }
+  .d-label.coral { fill: var(--coral); font-weight: 600; }
+  .d-label.dim { fill: var(--ink-3); font-size: 11px; }
+  .d-box { fill: var(--surface); stroke: #D8CFC5; stroke-width: 1.3; rx: 10; }
+  .d-box.green { stroke: var(--green); fill: var(--green-soft); }
+  .d-box.dim { stroke: var(--rule); fill: var(--warm); }
+  .d-line { stroke: #BDB4A9; stroke-width: 1.4; fill: none; }
+  .d-line.green { stroke: var(--green); stroke-width: 1.8; }
+  .d-line.dash { stroke-dasharray: 4 5; }
 
-  /* ── 5-layer strata ─────────────────────────────────────────────────── */
-  .stack { margin: 1.8rem 0 0; border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
-  .layer { display: grid; grid-template-columns: 3.2rem 13rem 1fr; gap: 1.2rem; padding: 1.05rem 1.4rem; background: var(--surface); align-items: baseline; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+
+  /* ── 5-layer strata (centerpiece) ─────────────────────────────────── */
+  .strata { border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; margin-top: 1.8rem; box-shadow: 0 20px 44px -32px rgba(32,20,10,.2); }
+  .layer { display: grid; grid-template-columns: 3.4rem 1fr 168px; gap: 1.3rem; align-items: center; padding: 1.25rem 1.6rem; background: var(--surface); }
   .layer + .layer { border-top: 1px solid var(--rule); }
-  .layer .n { font-family: var(--font-mono); font-size: 1.05rem; font-weight: 700; color: var(--brand); }
-  .layer .q { font-weight: 680; color: var(--ink); font-size: .98rem; }
-  .layer p { margin: 0; font-size: .9rem; }
-  .layer.reached { background: var(--paper); }
-  .layer.reached .n { color: var(--ink-3); }
-  .stack-note { display: grid; grid-template-columns: 3.2rem 1fr; gap: 1.2rem; padding: .8rem 1.4rem; background: var(--tint); border-top: 1px solid var(--rule); }
-  .stack-note p { margin: 0; font-size: .85rem; color: var(--brand-deep); font-weight: 550; }
+  .layer.reach { background: var(--warm); }
+  .layer .ln { font-size: 1.4rem; font-weight: 700; color: var(--green); }
+  .layer.reach .ln { color: var(--ink-3); }
+  .layer .lq { font-weight: 600; color: var(--ink); font-size: 1rem; }
+  .layer .ld { font-size: .88rem; margin: .1rem 0 0; }
+  .layer .meter { height: 8px; border-radius: 4px; background: var(--rule); overflow: hidden; }
+  .layer .meter i { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--green), var(--green-bright)); }
+  .layer.reach .meter i { background: #CFC7BD; }
+  .strata-divider { display: flex; align-items: center; gap: .7rem; padding: .7rem 1.6rem; background: var(--footer); color: #fff; font-size: .78rem; font-weight: 600; letter-spacing: .04em; }
+  .strata-divider b { color: var(--green-bright); }
 
-  /* ── Sample report ──────────────────────────────────────────────────── */
-  .report { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; align-items: center; }
-  .readout { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 1.6rem 1.6rem 1.4rem; }
-  .readout .rhead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
-  .readout .domain { font-family: var(--font-mono); font-size: .82rem; color: var(--ink-2); }
-  .grade { display: flex; align-items: baseline; gap: .5rem; }
-  .grade b { font-size: 2rem; font-weight: 780; letter-spacing: -.03em; color: var(--warn, #B45309); }
-  .grade small { font-family: var(--font-mono); font-size: .75rem; color: var(--ink-3); }
-  .rbar { display: grid; grid-template-columns: 9.5rem 1fr 2.4rem; gap: .8rem; align-items: center; margin-bottom: .55rem; }
-  .rbar span { font-size: .82rem; color: var(--ink-2); }
-  .rbar .track { height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden; }
-  .rbar .fill { height: 100%; background: var(--brand); border-radius: 3px; }
-  .rbar .fill.low { background: #B45309; }
-  .rbar em { font-family: var(--font-mono); font-style: normal; font-size: .74rem; color: var(--ink-3); text-align: right; }
-  .rfind { border-top: 1px solid var(--rule); margin-top: 1.1rem; padding-top: 1rem; }
-  .rfind p { font-size: .82rem; margin: 0 0 .45rem; padding-left: 1.1rem; position: relative; }
-  .rfind p::before { content: "→"; position: absolute; left: 0; color: var(--brand); }
+  /* ── Sample report card ───────────────────────────────────────────── */
+  .report-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; box-shadow: 0 24px 50px -30px rgba(32,20,10,.25); }
+  .rc-top { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--rule); background: var(--warm); font-size: .84rem; color: var(--ink-3); font-weight: 500; }
+  .rc-grade { display: flex; align-items: baseline; gap: .5rem; }
+  .rc-grade b { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; color: var(--amber); line-height: 1; }
+  .rc-grade small { color: var(--ink-3); }
+  .rc-body { padding: 1.3rem 1.4rem 1rem; }
+  .rc-row { display: grid; grid-template-columns: 8.5rem 1fr 2.2rem; gap: .8rem; align-items: center; margin-bottom: .6rem; }
+  .rc-row span { font-size: .86rem; color: var(--ink-2); }
+  .rc-track { height: 7px; border-radius: 4px; background: var(--rule); overflow: hidden; }
+  .rc-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--green), var(--green-bright)); }
+  .rc-fill.low { background: linear-gradient(90deg, #E0803A, var(--amber)); }
+  .rc-fill.gap { background: linear-gradient(90deg, var(--coral), #EE6A3E); }
+  .rc-row em { font-style: normal; font-size: .78rem; color: var(--ink-3); text-align: right; font-weight: 600; }
+  .rc-find { border-top: 1px solid var(--rule); margin-top: 1rem; padding: 1rem 1.4rem 1.3rem; background: var(--warm); }
+  .rc-find p { font-size: .84rem; margin: 0 0 .45rem; padding-left: 1.3rem; position: relative; }
+  .rc-find p:last-child { margin-bottom: 0; }
+  .rc-find p::before { content: "→"; position: absolute; left: 0; color: var(--coral); font-weight: 700; }
 
-  /* ── Process ────────────────────────────────────────────────────────── */
-  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.1rem; margin: 1.8rem 0 0; }
-  .step { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 1.4rem 1.4rem 1.2rem; position: relative; }
-  .step .sn { font-family: var(--font-mono); font-size: .74rem; color: var(--brand); font-weight: 700; letter-spacing: .08em; }
-  .step h3 { margin: .5rem 0 .4rem; font-size: 1.08rem; }
-  .step p { font-size: .89rem; margin: 0; }
-  .step .dur { font-family: var(--font-mono); font-size: .7rem; color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; display: block; margin-top: .9rem; }
+  /* ── Process steps ────────────────────────────────────────────────── */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.8rem; }
+  .step { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 1.7rem 1.6rem; position: relative; }
+  .step .sn { width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--coral-soft); color: var(--coral); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 1rem; margin-bottom: 1rem; }
+  .step .dur { font-size: .74rem; color: var(--ink-3); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; display: block; margin-top: 1rem; }
+  .step p { font-size: .92rem; margin: 0; }
 
-  /* ── Partnership ────────────────────────────────────────────────────── */
-  .partner { background: var(--brand-deep); border-radius: 18px; padding: 3rem; color: #E7F6EF; margin-top: 4.5rem; }
-  .partner h2 { color: #fff; }
-  .partner p { color: rgba(231,246,239,.85); }
-  .partner a { color: var(--brand-bright); }
-  .partner .eyebrow { color: var(--brand-bright); }
+  /* ── Goofre co-build band ─────────────────────────────────────────── */
+  .cobuild { background: var(--footer); border-radius: 22px; padding: 3rem; color: #fff; }
+  .cobuild .two { align-items: center; }
+  .cobuild .eyebrow { color: var(--green-bright); }
+  .cobuild h2 { color: #fff; }
+  .cobuild p { color: #C9C3BB; }
+  .cobuild .g-side { border-left: 1px solid #2A2A2A; padding-left: 2rem; }
+  .cobuild .g-side b { display: block; font-size: 1.3rem; color: #fff; font-weight: 700; margin-bottom: .5rem; }
+  .cobuild .g-side b span { color: var(--green-bright); }
+  .cobuild a { color: var(--green-bright); }
 
-  /* ── FAQ ────────────────────────────────────────────────────────────── */
-  .faq details { border-top: 1px solid var(--rule); }
-  .faq details:last-of-type { border-bottom: 1px solid var(--rule); }
-  .faq summary {
-    cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1.5rem;
-    padding: 1.15rem 0; font-weight: 660; color: var(--ink); font-size: 1rem;
-  }
+  /* ── FAQ ──────────────────────────────────────────────────────────── */
+  .faq details { border-bottom: 1px solid var(--rule); }
+  .faq details:first-of-type { border-top: 1px solid var(--rule); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 1.5rem; padding: 1.3rem 0; font-weight: 600; color: var(--ink); font-size: 1.05rem; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; font-family: var(--font-mono); color: var(--brand); font-size: 1.15rem; flex: none; }
-  .faq details[open] summary::after { content: "–"; }
-  .faq details p { padding: 0 0 1.2rem; max-width: 62ch; }
+  .faq summary::after { content: "+"; color: var(--coral); font-size: 1.4rem; line-height: 1; flex: none; }
+  .faq details[open] summary::after { content: "\2013"; }
+  .faq details p { padding: 0 0 1.3rem; max-width: 68ch; }
 
-  /* ── Final CTA + footer ─────────────────────────────────────────────── */
-  .final { text-align: center; padding: 5rem 0; }
-  .final h2 { margin: 0 auto .8rem; }
-  .final p { margin: 0 auto 1.6rem; }
-  footer.site { border-top: 1px solid var(--rule); background: var(--surface); }
-  footer.site .shell { display: flex; flex-wrap: wrap; gap: .6rem 2.5rem; justify-content: space-between; padding-top: 1.4rem; padding-bottom: 1.6rem; font-size: .82rem; color: var(--ink-3); }
+  /* ── Final CTA ────────────────────────────────────────────────────── */
+  .final { background: linear-gradient(135deg, #FBF3EF, var(--warm)); border-radius: 22px; padding: 3.4rem; text-align: center; }
+  .final h2 { margin: 0 auto .8rem; max-width: 22ch; }
+  .final p { margin: 0 auto 1.7rem; }
 
-  @media (max-width: 800px) {
-    .hero, .report { grid-template-columns: 1fr; gap: 2rem; }
+  /* ── Footer (black, LR-style) ─────────────────────────────────────── */
+  footer.site { background: var(--footer); color: #C9C3BB; margin-top: 0; }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.4rem; padding: 3rem 0 2rem; }
+  .foot-brand .lr-logo { color: #fff; }
+  .foot-brand p { font-size: .88rem; color: #9A938B; margin: 1rem 0 1.2rem; max-width: 32ch; }
+  .foot-col h4 { color: #fff; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 .9rem; font-weight: 600; }
+  .foot-col a { display: block; color: #B8B1A9; text-decoration: none; font-size: .9rem; padding: .25rem 0; }
+  .foot-col a:hover { color: var(--green-bright); }
+  .social { display: flex; gap: .5rem; }
+  .social a { width: 2.2rem; height: 2.2rem; border: 1px solid #2E2E2E; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #B8B1A9; }
+  .social a:hover { border-color: var(--green); color: var(--green-bright); }
+  .social svg { width: 1rem; height: 1rem; fill: currentColor; }
+  .foot-bottom { border-top: 1px solid #262626; padding: 1.2rem 0 1.6rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; justify-content: space-between; font-size: .78rem; color: #7E776F; }
+
+  @media (max-width: 860px){
+    .hero-grid, .two, .cobuild .two { grid-template-columns: 1fr; gap: 2.2rem; }
+    .cobuild .g-side { border-left: 0; border-top: 1px solid #2A2A2A; padding: 1.6rem 0 0; }
     .steps { grid-template-columns: 1fr; }
-    .layer { grid-template-columns: 2.2rem 1fr; }
-    .layer p { grid-column: 2; }
-    .partner { padding: 2rem 1.5rem; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .layer { grid-template-columns: 2.4rem 1fr; }
+    .layer .meter { grid-column: 2; }
   }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  @media (max-width: 560px){ .foot-grid { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce){ * { transition: none !important; } }
 </style>
 
+<!-- ══════════ representative Logic Rays header ══════════ -->
 <header class="site">
   <div class="shell">
-    <a class="wordmark" href="https://www.logicrays.com">Logic<span>Rays</span></a>
-    <a class="header-cta" href="https://cal.com/logicrays?src=lr-aco">Free AI readiness audit →</a>
+    <a class="lr-logo" href="https://www.logicrays.com"><span class="mark"></span>Logic<b>Rays</b></a>
+    <nav class="lr-nav">
+      <a class="hide-sm" href="https://www.logicrays.com">Home</a>
+      <a class="active" href="#top">Services</a>
+      <a class="hide-sm" href="https://www.logicrays.com">Hire Developers</a>
+      <a class="hide-sm" href="https://www.logicrays.com">Company</a>
+      <a class="btn btn-primary" style="padding:.6rem 1.3rem;font-size:.9rem;" href="https://cal.com/logicrays?src=lr-aco">Book free audit</a>
+    </nav>
   </div>
 </header>
 
-<!-- ══════════════════ HERO ══════════════════ -->
-<div class="shell">
-  <div class="hero">
-    <div>
-      <p class="eyebrow">AI readiness · Agentic commerce service</p>
-      <h1>Your next customer isn't a person. It's their AI.</h1>
-      <p class="hero-sub">
-        People are starting to shop through AI assistants — ChatGPT, Perplexity, Google. When they
-        do, an <strong>AI agent visits your store instead of a person</strong> — and most online
-        stores are invisible to it. We audit your store, fix what's missing, and keep you ready.
-      </p>
-      <a class="cta" href="https://cal.com/logicrays?src=lr-aco">Book your free AI readiness audit</a>
-      <p class="cta-note">A real scan of your live store · 29 checks · no obligation</p>
-    </div>
+<div class="shell" id="top">
 
-    <div class="agent-screen" role="img" aria-label="Example of an AI shopping agent choosing which store to buy from">
-      <div class="bar"><i></i><i></i><i></i></div>
-      <p class="msg user">Find me a waterproof camping tent under $400 that arrives by Friday.</p>
-      <p class="msg agent">Comparing 14 stores… <b>✓ One store verified</b> — in stock, free shipping, arrives Thursday, 30-day returns. Ready to order?</p>
-      <p class="msg agent">11 other stores sell similar tents — I couldn't confirm their stock, delivery or return terms, so I skipped them.</p>
-      <p class="screen-caption">
-        The stores an agent can read, trust and buy from win the sale.
-        The rest are skipped — silently.
-      </p>
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">AI Readiness · Agentic Commerce</p>
+        <h1>Your next customer isn't a person. It's their&nbsp;AI.</h1>
+        <p class="hero-sub">
+          People are starting to shop through AI assistants like ChatGPT, Perplexity and Google.
+          When they do, <strong>an AI agent visits your store instead of a person</strong> — and
+          most online stores are invisible to it. We make yours ready.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://cal.com/logicrays?src=lr-aco">Book your free AI readiness audit</a>
+          <a class="btn btn-ghost" href="#report">See a sample report</a>
+        </div>
+        <p class="hero-note">A real audit of your live store · graded A to F · no obligation</p>
+      </div>
+
+      <div class="agent-card" role="img" aria-label="An AI shopping agent comparing stores and buying only from the one it can read, trust and check out on">
+        <div class="agent-top"><i></i><i></i><i></i><span>AI shopping assistant</span></div>
+        <div class="agent-body">
+          <div class="msg user">Find a waterproof camping tent under $400 that arrives by Friday.</div>
+          <div class="msg ai">Comparing 14 stores… <span class="win">✓ One store verified</span> — in stock, free shipping, arrives Thursday, 30-day returns. Ready to order?</div>
+          <div class="msg ai">The other 13 sell similar tents. I couldn't confirm their stock, delivery or return terms, so I skipped them.</div>
+        </div>
+        <div class="agent-foot">The stores an agent can <b>read, trust and buy from</b> win the sale. The rest are skipped — silently.</div>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
 
-<!-- ══════════════════ PROOF ══════════════════ -->
+<!-- ══════════ PROOF STRIP ══════════ -->
 <div class="proof">
   <div class="shell">
     <div><b>10+ years</b><small>Building ecommerce</small></div>
     <div><b>[X]+ stores</b><small>Designed &amp; delivered</small></div>
     <div><b>[X] developers</b><small>Certified Magento team</small></div>
-    <div><b>Co-builders</b><small>Of the Goofre platform</small></div>
+    <div><b><em>Co-builders</em></b><small>Of the Goofre platform</small></div>
   </div>
 </div>
 
-<!-- ══════════════════ 01 · WHAT IS AGENTIC COMMERCE ══════════════════ -->
 <div class="shell">
+
+  <!-- ══════════ 01 · WHAT IS AGENTIC COMMERCE ══════════ -->
   <section id="what">
-    <p class="eyebrow">01 · The shift</p>
-    <h2>What is agentic commerce?</h2>
-    <p>
-      <strong>Agentic commerce is shopping done by AI agents on a person's behalf.</strong> Instead
-      of browsing ten stores, a shopper asks their AI assistant — and the assistant finds products,
-      compares stores, checks stock, delivery and return terms, and completes the purchase.
-    </p>
-    <p>
-      For your store, that means the visitor deciding whether to buy is increasingly a piece of
-      software acting for a human. Software doesn't scroll, doesn't squint at product photos, and
-      doesn't give the benefit of the doubt. It reads what your store publishes — and if it can't
-      read something, for the agent that thing doesn't exist.
-    </p>
-
-    <figure class="panel">
-      <svg viewBox="0 0 880 190" xmlns="http://www.w3.org/2000/svg" role="img"
-           aria-label="Diagram: a shopper asks an AI assistant, which buys from AI-ready stores and silently skips stores it cannot read">
-        <!-- shopper -->
-        <rect class="d-box" x="20" y="70" width="140" height="52"/>
-        <text class="d-label strong" x="90" y="92" text-anchor="middle">Shopper</text>
-        <text class="d-label dim" x="90" y="108" text-anchor="middle">asks in plain words</text>
-        <!-- arrow 1 -->
-        <line class="d-line" x1="160" y1="96" x2="240" y2="96"/>
-        <polygon points="240,96 231,91 231,101" fill="var(--ink-3)"/>
-        <!-- agent -->
-        <rect class="d-box brand" x="242" y="70" width="170" height="52"/>
-        <text class="d-label brand" x="327" y="92" text-anchor="middle">AI agent</text>
-        <text class="d-label dim" x="327" y="108" text-anchor="middle">finds · verifies · buys</text>
-        <!-- branch to ready store -->
-        <path class="d-line brand" d="M412 88 C 470 60, 520 46, 580 46"/>
-        <polygon points="580,46 570,41 571,51" fill="var(--brand)"/>
-        <rect class="d-box brand" x="582" y="22" width="180" height="50"/>
-        <text class="d-label brand" x="672" y="43" text-anchor="middle">AI-ready store</text>
-        <text class="d-label dim" x="672" y="59" text-anchor="middle">readable · trusted · buyable</text>
-        <text class="d-label brand" x="790" y="52">✓ wins the sale</text>
-        <!-- branch to unready store -->
-        <path class="d-line dashed" d="M412 104 C 470 132, 520 146, 580 146"/>
-        <rect class="d-box dim" x="582" y="122" width="180" height="50"/>
-        <text class="d-label dim" x="672" y="143" text-anchor="middle">Every other store</text>
-        <text class="d-label dim" x="672" y="159" text-anchor="middle">unreadable to agents</text>
-        <text class="d-label dim" x="790" y="152">✗ skipped</text>
-      </svg>
-      <figcaption>
-        The new path to purchase. The agent never shows the shopper the stores it skipped —
-        there is no page two to be found on.
-      </figcaption>
-    </figure>
+    <div class="two">
+      <div>
+        <p class="eyebrow">01 · The shift</p>
+        <h2>What is agentic commerce?</h2>
+        <p>
+          <strong>Agentic commerce is shopping done by AI agents on a person's behalf.</strong>
+          Instead of browsing ten stores, a shopper asks their AI assistant — and it finds products,
+          compares stores, checks stock, delivery and return terms, and completes the purchase.
+        </p>
+        <p>
+          For your store, the visitor deciding whether to buy is increasingly a piece of software.
+          Software doesn't scroll, squint at photos, or give the benefit of the doubt. It reads what
+          your store publishes. If it can't read something, for the agent that thing doesn't exist.
+        </p>
+      </div>
+      <figure class="panel" style="margin:0;">
+        <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="A shopper asks an AI agent, which buys from an AI-ready store and silently skips the stores it cannot read">
+          <rect class="d-box" x="20" y="130" width="130" height="46"/>
+          <text class="d-label strong" x="85" y="150" text-anchor="middle">Shopper</text>
+          <text class="d-label dim" x="85" y="166" text-anchor="middle">asks in plain words</text>
+          <line class="d-line" x1="150" y1="153" x2="196" y2="153"/><polygon points="196,153 188,148 188,158" fill="#BDB4A9"/>
+          <rect class="d-box" x="198" y="128" width="120" height="50" style="stroke:var(--coral);fill:var(--coral-soft);"/>
+          <text class="d-label coral" x="258" y="150" text-anchor="middle">AI agent</text>
+          <text class="d-label dim" x="258" y="166" text-anchor="middle">finds · verifies · buys</text>
+          <path class="d-line green" d="M318 140 C 360 96, 380 70, 410 66"/>
+          <polygon points="410,66 400,62 402,72" fill="#008A60"/>
+          <rect class="d-box green" x="330" y="36" width="120" height="52"/>
+          <text class="d-label green" x="390" y="58" text-anchor="middle">Ready store</text>
+          <text class="d-label dim" x="390" y="74" text-anchor="middle">✓ wins the sale</text>
+          <path class="d-line dash" d="M318 166 C 360 210, 380 236, 410 240"/>
+          <rect class="d-box dim" x="330" y="218" width="120" height="52"/>
+          <text class="d-label dim" x="390" y="240" text-anchor="middle">Every other store</text>
+          <text class="d-label dim" x="390" y="256" text-anchor="middle">✗ skipped, unseen</text>
+        </svg>
+        <figcaption class="cap">The new path to purchase. The agent never shows the shopper the stores it skipped — there is no page two to be found on.</figcaption>
+      </figure>
+    </div>
   </section>
+</div>
 
-  <!-- ══════════════════ 02 · MENTION VS TRANSACTION ══════════════════ -->
-  <section id="shift">
-    <p class="eyebrow">02 · Why SEO isn't enough</p>
-    <h2>Being mentioned by AI is marketing. Being buyable by AI is revenue.</h2>
-    <p>
-      Search asked one question: <em>who ranks?</em> AI shopping asks a harder one:
-      <em>who can I buy from — right now, with confidence?</em> SEO and its new coat of paint, AEO,
-      solve the first question. They get your store <strong>talked about</strong>. Agentic readiness
-      solves the second: it makes your store the one the agent can actually
-      <strong>complete a purchase from</strong> — verified identity, quotable return and shipping
-      terms, a checkout an agent can drive.
-    </p>
+<!-- ══════════ 02 · MENTION VS BUYABLE ══════════ -->
+<div class="band">
+  <div class="shell">
+    <section id="shift">
+      <p class="eyebrow">02 · Why SEO isn't enough</p>
+      <h2 style="max-width:30ch;">Being mentioned by AI is marketing. Being buyable by AI is revenue.</h2>
+      <p style="max-width:70ch;">
+        Search asked one question: <em>who ranks?</em> AI shopping asks a harder one:
+        <em>who can I buy from, right now, with confidence?</em> SEO and its new coat of paint, AEO,
+        answer the first. They get your store <strong>talked about</strong>. Agentic readiness answers
+        the second: it makes your store the one an agent can actually <strong>complete a purchase
+        from</strong> — verified identity, quotable return and shipping terms, a checkout it can drive.
+      </p>
+      <figure class="panel" style="margin-top:1.8rem;">
+        <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="SEO and AEO end at a mention of your store; agentic readiness ends at a completed sale and revenue">
+          <text class="d-label dim" x="20" y="42">SEO / AEO</text>
+          <line class="d-line" x1="130" y1="38" x2="470" y2="38"/><polygon points="470,38 462,33 462,43" fill="#BDB4A9"/>
+          <rect class="d-box dim" x="474" y="16" width="230" height="44"/>
+          <text class="d-label dim" x="589" y="35" text-anchor="middle">"…you could try this store"</text>
+          <text class="d-label dim" x="589" y="51" text-anchor="middle">a mention, then the trail ends</text>
+          <text class="d-label green" x="20" y="118">Agentic readiness</text>
+          <line class="d-line green" x1="175" y1="114" x2="470" y2="114"/><polygon points="470,114 462,109 462,119" fill="#008A60"/>
+          <rect class="d-box green" x="474" y="92" width="230" height="44"/>
+          <text class="d-label green" x="589" y="111" text-anchor="middle">"Ordered. Arrives Thursday."</text>
+          <text class="d-label dim" x="589" y="127" text-anchor="middle">a completed sale</text>
+          <line class="d-line green" x1="704" y1="114" x2="800" y2="114"/><polygon points="800,114 792,109 792,119" fill="#008A60"/>
+          <text class="d-label green" x="812" y="118">revenue</text>
+        </svg>
+        <figcaption class="cap">Two different finish lines. Most stores investing in "AI visibility" are optimising the top lane and have never measured the bottom one.</figcaption>
+      </figure>
+    </section>
+  </div>
+</div>
 
-    <figure class="panel">
-      <svg viewBox="0 0 880 168" xmlns="http://www.w3.org/2000/svg" role="img"
-           aria-label="Diagram: SEO and AEO end at a mention of your store; agentic readiness ends at a completed sale">
-        <!-- lane 1: mention -->
-        <text class="d-label dim" x="20" y="38">SEO / AEO</text>
-        <line class="d-line" x1="120" y1="34" x2="470" y2="34"/>
-        <polygon points="470,34 461,29 461,39" fill="var(--ink-3)"/>
-        <rect class="d-box dim" x="474" y="12" width="200" height="44"/>
-        <text class="d-label dim" x="574" y="31" text-anchor="middle">“…you could try this store”</text>
-        <text class="d-label dim" x="574" y="47" text-anchor="middle">a mention — then the trail ends</text>
-        <!-- lane 2: transaction -->
-        <text class="d-label brand" x="20" y="118">Agentic readiness</text>
-        <line class="d-line brand" x1="160" y1="114" x2="470" y2="114"/>
-        <polygon points="470,114 461,109 461,119" fill="var(--brand)"/>
-        <rect class="d-box brand" x="474" y="92" width="200" height="44"/>
-        <text class="d-label brand" x="574" y="111" text-anchor="middle">“Ordered. Arrives Thursday.”</text>
-        <text class="d-label dim" x="574" y="127" text-anchor="middle">a completed sale</text>
-        <line class="d-line brand" x1="674" y1="114" x2="760" y2="114"/>
-        <polygon points="760,114 751,109 751,119" fill="var(--brand)"/>
-        <text class="d-label brand" x="770" y="118">revenue</text>
-      </svg>
-      <figcaption>
-        Two different finish lines. Most stores investing in "AI visibility" are optimising the
-        top lane and have never measured the bottom one.
-      </figcaption>
-    </figure>
-  </section>
-
-  <!-- ══════════════════ 03 · FIVE LAYERS ══════════════════ -->
+<div class="shell">
+  <!-- ══════════ 03 · FIVE LAYERS ══════════ -->
   <section id="layers">
     <p class="eyebrow">03 · What "ready" actually means</p>
-    <h2>Getting AI-ready isn't one switch. It's five layers.</h2>
-    <p>
+    <h2 style="max-width:26ch;">Getting AI-ready isn't one switch. It's five layers.</h2>
+    <p style="max-width:66ch;">
       Every layer is a question an AI agent silently asks about your store. Answer all five and
       agents can find you, trust you and buy from you. Fail one and everything above it stops
       mattering — a store that can't be trusted doesn't get to be bought from.
     </p>
 
-    <div class="stack" role="img" aria-label="The five layers of AI readiness: access, comprehension, trust, transaction and reliability">
-      <div class="layer reached">
-        <span class="n">1</span><span class="q">Can AI find your store?</span>
-        <p>Crawler permissions, sitemaps, secure connection — the front door. Most stores pass, often by accident.</p>
+    <div class="strata" role="img" aria-label="Five layers of AI readiness: access, comprehension, trust, transaction, reliability. SEO and AEO reach only the first two.">
+      <div class="layer reach">
+        <span class="ln">1</span>
+        <div><div class="lq">Can AI find your store?</div><p class="ld">Crawler permissions, sitemaps, a secure connection — the front door. Most stores pass, often by accident.</p></div>
+        <div class="meter"><i style="width:86%"></i></div>
       </div>
-      <div class="layer reached">
-        <span class="n">2</span><span class="q">Can it read your products?</span>
-        <p>Prices, stock, images and descriptions in machine-readable form — not just pixels a human can see.</p>
+      <div class="layer reach">
+        <span class="ln">2</span>
+        <div><div class="lq">Can it read your products?</div><p class="ld">Prices, stock, images and descriptions in machine-readable form, not just pixels a human can see.</p></div>
+        <div class="meter"><i style="width:64%"></i></div>
+      </div>
+      <div class="strata-divider">▼&nbsp;&nbsp;SEO and AEO stop here. <b>Below this line is where the sale happens.</b></div>
+      <div class="layer">
+        <span class="ln">3</span>
+        <div><div class="lq">Can it trust who you are?</div><p class="ld">A verified store identity an agent can check — the difference between a store and a storefront-shaped page.</p></div>
+        <div class="meter"><i style="width:34%"></i></div>
       </div>
       <div class="layer">
-        <span class="n">3</span><span class="q">Can it trust who you are?</span>
-        <p>Verified store identity that an agent can check cryptographically — the difference between a store and a storefront-shaped page.</p>
+        <span class="ln">4</span>
+        <div><div class="lq">Can it actually buy?</div><p class="ld">Return and shipping terms an agent can quote before purchasing, payment it can use, a checkout it can complete.</p></div>
+        <div class="meter"><i style="width:28%"></i></div>
       </div>
       <div class="layer">
-        <span class="n">4</span><span class="q">Can it actually buy?</span>
-        <p>Return and shipping terms an agent can quote before purchasing, payment methods it can use, a checkout it can complete.</p>
-      </div>
-      <div class="layer">
-        <span class="n">5</span><span class="q">Will it still work next month?</span>
-        <p>Standards are evolving monthly. Monitoring and re-checks keep a ready store ready.</p>
-      </div>
-      <div class="stack-note">
-        <span></span>
-        <p>SEO and AEO end at layer 2. Layers 3–5 are where sales happen — and where we work.</p>
+        <span class="ln">5</span>
+        <div><div class="lq">Will it still work next month?</div><p class="ld">Standards are evolving monthly. Monitoring and re-checks keep a ready store ready.</p></div>
+        <div class="meter"><i style="width:40%"></i></div>
       </div>
     </div>
   </section>
+</div>
 
-  <!-- ══════════════════ 04 · THE REPORT ══════════════════ -->
-  <section id="report">
-    <div class="report">
-      <div>
-        <p class="eyebrow">04 · The free audit</p>
-        <h2>One scan. 29 checks. A grade you can act on.</h2>
-        <p>
-          The audit runs on your <strong>live store</strong> — not a questionnaire — and checks all
-          five layers: 29 automated checks across five areas, graded A–F.
-        </p>
-        <p>
-          Every gap is named in plain English with its fix and its owner: things
-          <strong>you</strong> can change today, things <strong>we</strong> fix in an engagement,
-          and things that become <strong>automatic</strong> once your store is connected. No jargon
-          wall, no scare chart — a to-do list, priced by effort.
-        </p>
-        <a class="cta" href="https://cal.com/logicrays?src=lr-aco">Get my store's grade</a>
-      </div>
-
-      <div class="readout" role="img" aria-label="Sample AI readiness report: grade C, with five area scores and three example findings">
-        <div class="rhead">
-          <span class="domain">yourstore.com · sample report</span>
-          <span class="grade"><b>C</b><small>61 / 100</small></span>
+<!-- ══════════ 04 · THE REPORT ══════════ -->
+<div class="band">
+  <div class="shell">
+    <section id="report">
+      <div class="two">
+        <div>
+          <p class="eyebrow">04 · The free audit</p>
+          <h2 style="max-width:20ch;">One audit. A grade you can act on.</h2>
+          <p>
+            We run the audit on your <strong>live store</strong> — not a questionnaire — and check
+            all five layers. You get a graded report from A to F, and every gap named in plain
+            English with its fix and its owner.
+          </p>
+          <p>
+            Things <strong>you</strong> can change today, things <strong>we</strong> fix in an
+            engagement, and things that become <strong>automatic</strong> once your store is
+            connected. No jargon wall, no scare chart — a to-do list, ranked by revenue impact.
+          </p>
+          <div style="margin-top:1.6rem;"><a class="btn btn-primary" href="https://cal.com/logicrays?src=lr-aco">Get my store's grade</a></div>
         </div>
-        <div class="rbar"><span>Can AI find you</span><div class="track"><div class="fill" style="width:88%"></div></div><em>88</em></div>
-        <div class="rbar"><span>Can it read products</span><div class="track"><div class="fill" style="width:74%"></div></div><em>74</em></div>
-        <div class="rbar"><span>Can it trust you</span><div class="track"><div class="fill low" style="width:35%"></div></div><em>35</em></div>
-        <div class="rbar"><span>Can it buy</span><div class="track"><div class="fill low" style="width:28%"></div></div><em>28</em></div>
-        <div class="rbar"><span>Stays working</span><div class="track"><div class="fill low" style="width:40%"></div></div><em>40</em></div>
-        <div class="rfind">
-          <p>Return policy missing from product listings — agents can't quote your terms</p>
-          <p>AI shopping crawlers blocked in robots.txt — one-line fix, you can do it today</p>
-          <p>Store identity unverifiable — becomes automatic once connected</p>
+        <div class="report-card" role="img" aria-label="Sample AI readiness report: grade C, with five area scores and three example findings">
+          <div class="rc-top"><span>yourstore.com · sample report</span><span class="rc-grade"><b>C</b><small>needs work</small></span></div>
+          <div class="rc-body">
+            <div class="rc-row"><span>Can AI find you</span><div class="rc-track"><div class="rc-fill" style="width:86%"></div></div><em>Good</em></div>
+            <div class="rc-row"><span>Can it read products</span><div class="rc-track"><div class="rc-fill low" style="width:64%"></div></div><em>Partial</em></div>
+            <div class="rc-row"><span>Can it trust you</span><div class="rc-track"><div class="rc-fill gap" style="width:34%"></div></div><em>Gap</em></div>
+            <div class="rc-row"><span>Can it buy</span><div class="rc-track"><div class="rc-fill gap" style="width:28%"></div></div><em>Gap</em></div>
+            <div class="rc-row"><span>Stays working</span><div class="rc-track"><div class="rc-fill low" style="width:40%"></div></div><em>Partial</em></div>
+          </div>
+          <div class="rc-find">
+            <p>Return policy missing from listings — agents can't quote your terms, so they skip you</p>
+            <p>AI shopping crawlers blocked in robots.txt — a one-line fix you can make today</p>
+            <p>Store identity unverifiable — becomes automatic once connected</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+</div>
 
-  <!-- ══════════════════ 05 · HOW IT WORKS ══════════════════ -->
+<div class="shell">
+  <!-- ══════════ 05 · HOW IT WORKS ══════════ -->
   <section id="how">
     <p class="eyebrow">05 · How it works</p>
     <h2>Audit. Fix. Stay ready.</h2>
-    <p>
+    <p style="max-width:64ch;">
       You don't need an engineering team, and you don't need to re-platform. The work happens on
       your existing Magento store, scoped by the audit itself.
     </p>
-
     <div class="steps">
       <div class="step">
-        <span class="sn">STEP 1</span>
+        <div class="sn">1</div>
         <h3>Audit — free</h3>
         <p>We scan your live store, walk you through the graded report, and hand you the full gap
-        list — whether or not you ever hire us.</p>
+        list, whether or not you ever hire us.</p>
         <span class="dur">Days · no obligation</span>
       </div>
       <div class="step">
-        <span class="sn">STEP 2</span>
+        <div class="sn">2</div>
         <h3>Fix the gaps</h3>
         <p>A fixed-scope readiness project: the Goofre storefront module installed and configured,
-        markup and policy gaps closed, identity verified — your score visibly lifted.</p>
+        markup and policy gaps closed, identity verified, your score visibly lifted.</p>
         <span class="dur">Fixed scope · ~90 days</span>
       </div>
       <div class="step">
-        <span class="sn">STEP 3</span>
+        <div class="sn">3</div>
         <h3>Stay ready</h3>
-        <p>Agentic commerce is a moving target — standards shift monthly. Scheduled re-scans, a prioritized work queue with due dates, and a monthly report that shows what improved.</p>
+        <p>Agentic commerce is a moving target — standards shift monthly. Scheduled re-scans, drift
+        alerts, and a report you can see every month.</p>
         <span class="dur">Ongoing · monthly report</span>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════ 06 · GOOFRE ══════════════════ -->
-  <section id="goofre">
-    <div class="partner">
-      <p class="eyebrow">06 · The platform behind the service</p>
-      <h2>We don't resell an AI tool. We co-build one.</h2>
-      <p>
-        <strong style="color:#fff">Goofre — Agentic Commerce Orchestrator™</strong> is a first-of-its-kind orchestration layer for agentic commerce — the platform behind everything on this page: the 29-check audit standard, the storefront module that makes stores readable to agents, and the operations layer that keeps them transactable. Logic Rays co-builds it with an innovative Canadian product team — a decade of
-        ecommerce delivery on one side, product engineering on the other.
-      </p>
-      <p>
-        When we fix a gap on your store, we're using the same product we help build — and every
-        engagement makes the platform better. That's a claim no agency reselling someone else's
-        plugin can make.
-      </p>
-      <p style="margin:0"><a href="https://goofre.com?src=lr-aco">Explore the Goofre platform →</a></p>
+  <!-- ══════════ 06 · GOOFRE CO-BUILD ══════════ -->
+  <section>
+    <div class="cobuild">
+      <div class="two">
+        <div>
+          <p class="eyebrow">The platform behind the service</p>
+          <h2>We don't resell an AI tool. We co-build one.</h2>
+          <p>
+            <strong style="color:#fff;">Goofre</strong> is the platform behind everything on this
+            page: the readiness standard, the storefront module that makes stores legible to agents,
+            and the orchestration layer that keeps them buyable. Logic Rays co-builds it with an
+            innovative Canadian product team — a decade of ecommerce delivery on one side, product
+            engineering on the other.
+          </p>
+          <p style="margin:0;">When we fix a gap on your store, we're using the same product we help build. That's a claim no agency reselling someone else's plugin can make.</p>
+        </div>
+        <div class="g-side">
+          <b>Goofre <span>×</span> Logic Rays</b>
+          <p style="color:#C9C3BB;font-size:.92rem;">A first-of-its-kind agentic-commerce platform, delivered by the team that has built Magento stores for over a decade.</p>
+          <a href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco">Explore the Goofre platform →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ══════════════════ 07 · FAQ ══════════════════ -->
+  <!-- ══════════ 07 · FAQ ══════════ -->
   <section id="faq">
     <p class="eyebrow">07 · Questions merchants ask</p>
     <h2>The honest answers, before you book.</h2>
-
-    <div class="faq">
-      <details>
-        <summary>What is agentic commerce?</summary>
-        <p>Agentic commerce is shopping done by AI agents on a person's behalf. Instead of browsing
-        stores, a shopper asks an AI assistant — and the assistant finds products, compares stores,
-        checks stock, delivery and return terms, and completes the purchase. For a merchant, it means
-        the visitor deciding whether to buy is increasingly a piece of software acting for a human.</p>
-      </details>
-      <details>
-        <summary>Are AI agents really buying from online stores today?</summary>
-        <p>The AI crawlers are already on your store — GPTBot, PerplexityBot and Google's AI crawlers
-        visit ecommerce sites today, and AI assistants already recommend specific products and stores.
-        Completed agent checkouts are earlier, but the stores that are readable and trustworthy now
-        are the ones agents learn to recommend first. The audit is free, so the cost of knowing where
-        you stand is zero.</p>
-      </details>
-      <details>
-        <summary>We already invest in SEO — isn't that enough?</summary>
-        <p>SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets
-        your store bought from. Being mentioned is layers one and two of a five-layer problem; an
-        agent that finds you but cannot verify your identity, read your return terms or complete your
-        checkout recommends a competitor it can. Most stores we audit are strong on visibility and
-        empty on buyability.</p>
-      </details>
-      <details>
-        <summary>Is this just adding schema markup to my site?</summary>
-        <p>Markup is one layer of five. Full readiness also covers verified store identity,
-        machine-readable return and shipping terms an agent can quote before buying, a checkout an
-        agent can complete, and monitoring so it all keeps working. No markup plugin does that — it
-        takes a platform, which is what the Goofre module and audit provide.</p>
-      </details>
-      <details>
-        <summary>Do I need to rebuild my store or change platforms?</summary>
-        <p>No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A
-        typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform
-        measured in quarters.</p>
-      </details>
-      <details>
-        <summary>What does the free audit include, and what happens after?</summary>
-        <p>The audit runs 29 automated checks across five areas on your live store and produces a
-        graded A–F report: every gap named in plain English, with its fix and who owns it — you, us,
-        or automatic once connected. What happens next is your call: many merchants take the report
-        and fix things internally; others engage us for a fixed-scope readiness project. There is no
-        obligation either way.</p>
-      </details>
-      <details>
-        <summary>Why Logic Rays for AI readiness?</summary>
-        <p>Because we co-build the platform. Goofre — the audit standard, the storefront module for Magento and the orchestration layer behind this service — is a product we are building
-        together with an innovative Canadian product team, on top of more than a decade of building
-        Magento stores. Your current agency would be reselling a tool; we ship it.</p>
-      </details>
+    <div class="faq" style="margin-top:1.4rem;">
+      <details><summary>What is agentic commerce?</summary><p>Agentic commerce is shopping done by AI agents on a person's behalf. Instead of browsing stores, a shopper asks an AI assistant, and it finds products, compares stores, checks stock, delivery and return terms, and completes the purchase. For a merchant, the visitor deciding whether to buy is increasingly a piece of software acting for a human.</p></details>
+      <details><summary>Are AI agents really buying from online stores today?</summary><p>The AI crawlers are already on your store. GPTBot, PerplexityBot and Google's AI crawlers visit ecommerce sites today, and AI assistants already recommend specific products and stores. The stores that are readable and trustworthy now are the ones agents learn to recommend first. The audit is free, so the cost of knowing where you stand is zero.</p></details>
+      <details><summary>We already invest in SEO. Isn't that enough?</summary><p>SEO and answer-engine optimisation get your store mentioned by AI. Agentic readiness gets your store bought from. Being mentioned is the first two layers of a five-layer problem; an agent that finds you but cannot verify your identity, read your return terms or complete your checkout recommends a competitor it can. Most stores we audit are strong on visibility and empty on buyability.</p></details>
+      <details><summary>Do I need to rebuild my store or change platforms?</summary><p>No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters.</p></details>
+      <details><summary>What does the free audit include, and what happens after?</summary><p>We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally; others engage us for a fixed-scope readiness project. There is no obligation either way.</p></details>
+      <details><summary>Why Logic Rays for AI readiness?</summary><p>Because we co-build the platform. Goofre, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it.</p></details>
     </div>
   </section>
 
-  <!-- ══════════════════ FINAL CTA ══════════════════ -->
-  <section class="final" id="book">
-    <p class="eyebrow" style="text-align:center">Free · 29 checks · your live store</p>
-    <h2 style="max-width:100%">Talk to an ecommerce expert.<br>Leave with your readiness report.</h2>
-    <p style="max-width:46ch">
-      Thirty minutes. We run the audit on your store, walk the grade with you, and you keep the
-      full gap list — whatever you decide to do next.
-    </p>
-    <a class="cta" href="https://cal.com/logicrays?src=lr-aco">Book your free AI readiness audit</a>
+  <!-- ══════════ FINAL CTA ══════════ -->
+  <section id="book">
+    <div class="final">
+      <p class="eyebrow" style="color:var(--coral);">Free · your live store · no obligation</p>
+      <h2>Talk to an ecommerce expert. Leave with your readiness report.</h2>
+      <p style="max-width:48ch;">Thirty minutes. We run the audit on your store, walk the grade with you, and you keep the full gap list — whatever you decide to do next.</p>
+      <a class="btn btn-primary" href="https://cal.com/logicrays?src=lr-aco">Book your free AI readiness audit</a>
+    </div>
   </section>
 </div>
 
+<!-- ══════════ FOOTER (representative, LR black) ══════════ -->
 <footer class="site">
   <div class="shell">
-    <span>© 2026 Logic Rays · Ecommerce, delivered for 10+ years</span>
-    <span>Partners and co-builders of <a href="https://goofre.com?src=lr-aco">Goofre — Agentic Commerce Orchestrator™</a></span>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="lr-logo" href="https://www.logicrays.com"><span class="mark"></span>Logic<b style="color:var(--coral-2);">Rays</b></a>
+        <p>Ecommerce, delivered for over a decade. Now making stores ready for the age of AI shopping.</p>
+        <div class="social">
+          <a href="https://www.logicrays.com" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.31h4.52V23H.24V8.31zM8.34 8.31h4.33v2h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.92V23h-4.52v-7.13c0-1.7-.03-3.88-2.37-3.88-2.37 0-2.73 1.85-2.73 3.76V23H8.34z"/></svg></a>
+          <a href="https://www.logicrays.com" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.24 2H21.5l-7.1 8.12L22.75 22h-6.56l-5.14-6.72L5.16 22H1.89l7.6-8.69L1.25 2h6.73l4.64 6.14L18.24 2zm-1.15 18.05h1.81L6.99 3.85H5.05z"/></svg></a>
+          <a href="https://www.logicrays.com" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>This service</h4>
+        <a href="#what">What is agentic commerce</a>
+        <a href="#layers">The 5 layers</a>
+        <a href="#report">The free audit</a>
+        <a href="#book">Book a readiness audit</a>
+      </div>
+      <div class="foot-col">
+        <h4>Logic Rays</h4>
+        <a href="https://www.logicrays.com">Home</a>
+        <a href="https://www.logicrays.com">All services</a>
+        <a href="https://www.logicrays.com">Hire developers</a>
+        <a href="https://www.logicrays.com">Contact us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Platform</h4>
+        <a href="https://reachviveksai-cloud.github.io/goofre-landing/">Goofre for developers</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Logic Rays. In partnership with Goofre.</span>
+      <span>"Agentic Commerce Orchestrator" is a trademark of Goofre.</span>
+    </div>
   </div>
 </footer>
 
