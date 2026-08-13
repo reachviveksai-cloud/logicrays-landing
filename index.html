@@ -231,15 +231,16 @@
   .step p { font-size: .92rem; margin: 0; }
 
   /* ── Goofre co-build band ─────────────────────────────────────────── */
-  .cobuild { background: var(--footer); border-radius: 22px; padding: 3rem; color: #fff; }
-  .cobuild .two { align-items: center; }
-  .cobuild .eyebrow { color: var(--green-bright); }
-  .cobuild h2 { color: #fff; }
-  .cobuild p { color: #C9C3BB; }
-  .cobuild .g-side { border-left: 1px solid #2A2A2A; padding-left: 2rem; }
-  .cobuild .g-side b { display: block; font-size: 1.3rem; color: #fff; font-weight: 700; margin-bottom: .5rem; }
-  .cobuild .g-side b span { color: var(--green-bright); }
-  .cobuild a { color: var(--green-bright); }
+  /* compact capability signal — Goofre as credibility, not co-promotion */
+  .cobuild-slim { display: grid; grid-template-columns: auto 1fr auto; gap: 1.6rem; align-items: center;
+    background: var(--warm); border: 1px solid var(--rule); border-left: 4px solid var(--green); border-radius: 14px; padding: 1.5rem 1.8rem; }
+  .cobuild-slim .cb-mark { width: 3rem; height: 3rem; border-radius: 12px; background: linear-gradient(135deg, var(--green), var(--green-bright));
+    display: flex; align-items: center; justify-content: center; color: #05271C; font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; flex: none; }
+  .cobuild-slim h3 { margin: 0 0 .25rem; font-size: 1.12rem; }
+  .cobuild-slim p { margin: 0; font-size: .92rem; max-width: 70ch; }
+  .cobuild-slim .cb-link { white-space: nowrap; font-size: .88rem; font-weight: 600; color: var(--green); text-decoration: none; }
+  .cobuild-slim .cb-link:hover { text-decoration: underline; }
+  @media (max-width: 720px){ .cobuild-slim { grid-template-columns: 1fr; gap: 1rem; } .cobuild-slim .cb-mark { display: none; } }
 
   /* ── FAQ ──────────────────────────────────────────────────────────── */
   .faq details { border-bottom: 1px solid var(--rule); }
@@ -536,26 +537,15 @@
 
   <!-- ══════════ 06 · GOOFRE CO-BUILD ══════════ -->
   <section>
-    <div class="cobuild">
-      <div class="two">
-        <div>
-          <p class="eyebrow">The platform behind the service</p>
-          <h2>We don't resell an AI tool. We co-build one.</h2>
-          <p>
-            <strong style="color:#fff;">Goofre</strong> is the platform behind everything on this
-            page: the readiness standard, the storefront module that makes stores legible to agents,
-            and the orchestration layer that keeps them buyable. Logic Rays co-builds it with an
-            innovative Canadian product team — a decade of ecommerce delivery on one side, product
-            engineering on the other.
-          </p>
-          <p style="margin:0;">When we fix a gap on your store, we're using the same product we help build. That's a claim no agency reselling someone else's plugin can make.</p>
-        </div>
-        <div class="g-side">
-          <b>Goofre <span>×</span> Logic Rays</b>
-          <p style="color:#C9C3BB;font-size:.92rem;">A first-of-its-kind agentic-commerce platform, delivered by the team that has built Magento stores for over a decade.</p>
-          <a href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco">Explore the Goofre platform →</a>
-        </div>
+    <div class="cobuild-slim">
+      <span class="cb-mark" aria-hidden="true">G</span>
+      <div>
+        <h3>We co-built the technology to solve this. We didn't just buy a tool.</h3>
+        <p>The audit and the fixes run on <strong>Goofre</strong>, an agentic-commerce platform we
+        co-engineered. So the team readying your store is the same team building the standard it is
+        measured against — a claim no agency reselling someone else's plugin can make.</p>
       </div>
+      <a class="cb-link" href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco">About Goofre →</a>
     </div>
   </section>
 
