@@ -1,0 +1,486 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Is Your Magento Store Ready for AI Shoppers? | Logic Rays</title>
+<meta name="description" content="A Logic Rays readiness briefing for Magento merchants: what agentic commerce is, why Magento stores are invisible to AI shoppers, and the Agentic Commerce Orchestrator service that fixes it.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#FFFFFF; --warm:#FBF8F5; --surface:#FFFFFF;
+    --ink:#202020; --ink-2:#5C554E; --ink-3:#8A837B; --rule:#ECE6DF;
+    --coral:#D03007; --coral-2:#E54535; --coral-soft:rgba(208,48,7,.07);
+    --tan:#B98A5E; --green:#008A60; --green-2:#34C58C; --green-bright:#4EE0B8;
+    --green-soft:rgba(0,138,96,.08); --amber:#E6960A; --footer:#101010;
+    --font:"Poppins","Euclid Circular A",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{font-family:var(--font);background:#e9e4dd;color:var(--ink-2);-webkit-font-smoothing:antialiased;overflow:hidden;}
+
+  .deck{position:fixed;inset:0;}
+  .slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    padding:6vh 8vw;background:var(--paper);opacity:0;pointer-events:none;transition:opacity .28s ease;overflow:hidden;}
+  .slide.active{opacity:1;pointer-events:auto;z-index:1;}
+  .slide.warm{background:var(--warm);}
+  .slide.dark{background:var(--footer);color:#C9C3BB;}
+
+  /* brand mark, corner */
+  .mk{position:absolute;top:4.2vh;left:8vw;display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:1rem;color:var(--ink);}
+  .mk .sq{width:1.35rem;height:1.35rem;border-radius:6px;background:linear-gradient(135deg,var(--coral),var(--coral-2));display:inline-block;}
+  .mk b{color:var(--coral);}
+  .slide.dark .mk{color:#fff;}
+  .pageno{position:absolute;bottom:4vh;right:8vw;font-size:.72rem;color:var(--ink-3);font-weight:600;letter-spacing:.04em;}
+  .slide.dark .pageno{color:#8b857d;}
+
+  .eyebrow{font-size:clamp(.72rem,1.1vw,.86rem);letter-spacing:.14em;text-transform:uppercase;color:var(--tan);font-weight:700;margin-bottom:1.1rem;}
+  h1{font-size:clamp(2rem,5.2vw,4.1rem);line-height:1.03;letter-spacing:-.02em;color:var(--ink);font-weight:800;max-width:20ch;text-wrap:balance;}
+  h2{font-size:clamp(1.6rem,3.8vw,2.9rem);line-height:1.08;letter-spacing:-.015em;color:var(--ink);font-weight:800;max-width:22ch;text-wrap:balance;}
+  .sub{font-size:clamp(1rem,1.7vw,1.35rem);color:var(--ink-2);max-width:52ch;margin-top:1.3rem;line-height:1.5;}
+  .kicker{color:var(--coral);}
+  .g{color:var(--green);}
+  strong{color:var(--ink);font-weight:700;}
+  .slide.dark h1,.slide.dark h2{color:#fff;}
+  .slide.dark strong{color:#fff;}
+
+  .foot-src{position:absolute;bottom:4vh;left:8vw;font-size:.72rem;color:var(--ink-3);max-width:70vw;}
+
+  /* pill / buttons */
+  .pill{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--green),var(--green-bright));
+    color:#05271C;font-weight:700;border-radius:999px;padding:.85rem 1.7rem;font-size:clamp(.95rem,1.4vw,1.1rem);
+    box-shadow:0 10px 24px -10px rgba(0,138,96,.55);}
+
+  /* flow (3 steps) */
+  .flow{display:flex;align-items:stretch;gap:1rem;margin-top:2.4rem;flex-wrap:wrap;}
+  .flow .node{flex:1;min-width:190px;background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:1.5rem 1.4rem;}
+  .flow .node .n{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tan);}
+  .flow .node h3{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--ink);margin:.5rem 0 .35rem;font-weight:700;}
+  .flow .node p{font-size:.92rem;color:var(--ink-2);}
+  .flow .arrow{align-self:center;color:var(--coral);font-size:1.6rem;font-weight:700;}
+
+  /* stat cards */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.4rem;}
+  .stat{background:var(--surface);border:1px solid var(--rule);border-top:3px solid var(--green);border-radius:14px;padding:1.7rem 1.5rem;}
+  .stat b{display:block;font-size:clamp(2rem,4vw,3.1rem);font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+  .stat span{display:block;font-size:.92rem;color:var(--ink-2);margin-top:.6rem;line-height:1.4;}
+  .stat em{font-style:normal;color:var(--tan);font-weight:600;font-size:.78rem;}
+
+  /* generic list */
+  .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center;margin-top:1.5rem;}
+  ul.clean{list-style:none;margin-top:1.6rem;}
+  ul.clean li{position:relative;padding:.55rem 0 .55rem 1.9rem;font-size:clamp(.98rem,1.5vw,1.18rem);color:var(--ink-2);border-top:1px solid var(--rule);}
+  ul.clean li:first-child{border-top:0;}
+  ul.clean li::before{content:"";position:absolute;left:0;top:1.05rem;width:.6rem;height:.6rem;border-radius:2px;background:var(--coral);}
+  ul.clean.gk li::before{background:var(--green);}
+  ul.clean li b{color:var(--ink);}
+
+  /* strata (5 layers) */
+  .strata{margin-top:1.8rem;display:flex;flex-direction:column;gap:.5rem;max-width:840px;}
+  .layer{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;
+    background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--green);border-radius:10px;padding:.85rem 1.2rem;}
+  .layer .lname{font-weight:700;color:var(--ink);font-size:clamp(.95rem,1.4vw,1.15rem);}
+  .layer .q{color:var(--ink-3);font-size:.92rem;}
+  .layer .ln{font-size:.72rem;font-weight:700;color:var(--tan);}
+  .strata-note{margin-top:1rem;font-size:.95rem;color:var(--ink-2);}
+  .strata-note b{color:var(--coral);}
+
+  /* then / now */
+  .tn2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2rem;}
+  .tn{border:1px solid var(--rule);border-radius:16px;padding:1.7rem 1.7rem;background:var(--surface);}
+  .tn.now{border-color:var(--green);background:var(--green-soft);}
+  .tn .tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;display:inline-block;margin-bottom:.9rem;padding:.22rem .6rem;border-radius:999px;}
+  .tn.then .tag{color:var(--ink-3);background:var(--warm);border:1px solid var(--rule);}
+  .tn.now .tag{color:#05271C;background:linear-gradient(135deg,var(--green),var(--green-bright));}
+  .tn h3{font-size:clamp(1.15rem,1.9vw,1.5rem);color:var(--ink);margin-bottom:.7rem;}
+  .tn p{font-size:.98rem;color:var(--ink-2);margin:.3rem 0;}
+  .tn .win{color:var(--green);font-weight:700;}
+
+  /* report card */
+  .report{max-width:560px;background:var(--surface);border:1px solid var(--rule);border-radius:18px;overflow:hidden;box-shadow:0 24px 50px -30px rgba(32,20,10,.3);margin-top:.5rem;}
+  .report .rtop{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.4rem;border-bottom:1px solid var(--rule);background:var(--warm);font-size:.84rem;color:var(--ink-3);font-weight:600;}
+  .report .grade{display:flex;align-items:baseline;gap:.4rem;}
+  .report .grade b{font-size:1.7rem;color:var(--amber);font-weight:800;}
+  .report .rbody{padding:1.2rem 1.4rem;}
+  .report .row{display:grid;grid-template-columns:9rem 1fr auto;gap:.7rem;align-items:center;margin:.55rem 0;font-size:.9rem;color:var(--ink-2);}
+  .report .track{height:.5rem;background:var(--warm);border-radius:999px;overflow:hidden;}
+  .report .fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-bright));border-radius:999px;}
+  .report .sc{font-weight:700;color:var(--ink);font-size:.82rem;}
+
+  /* timeline */
+  .tl{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.2rem;}
+  .tl .card{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:1.8rem;position:relative;}
+  .tl .when{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--coral);}
+  .tl .card.b .when{color:var(--green);}
+  .tl h3{font-size:clamp(1.2rem,2vw,1.55rem);color:var(--ink);margin:.6rem 0 .4rem;font-weight:700;}
+  .tl p{font-size:.96rem;color:var(--ink-2);}
+
+  /* steps row */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem;margin-top:2.2rem;}
+  .steps.n3{grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:900px;}
+  .step{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:1.4rem 1.2rem;}
+  .step .sn{width:2.1rem;height:2.1rem;border-radius:50%;background:var(--coral-soft);color:var(--coral);font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:.8rem;}
+  .step h3{font-size:1rem;color:var(--ink);margin-bottom:.3rem;}
+  .step p{font-size:.84rem;color:var(--ink-2);}
+  .step .dur{display:block;margin-top:.6rem;font-size:.72rem;color:var(--ink-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+
+  /* proof stats row (why us) */
+  .proof{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:2.2rem;}
+  .proof div b{display:block;font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+  .proof div b em{font-style:normal;color:var(--green);}
+  .proof div span{font-size:.86rem;color:var(--ink-2);}
+
+  .big-quote{font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.18;color:var(--ink);font-weight:700;max-width:20ch;}
+  .big-quote .g{color:var(--green);}
+
+  .contact-cta{margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;align-items:flex-start;}
+  .contact-lines{font-size:1.05rem;color:var(--ink-2);line-height:1.9;}
+  .contact-lines b{color:var(--ink);}
+
+  .cobuilt{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--ink-3);margin-top:1.4rem;}
+  .cobuilt .gm{width:1.5rem;height:1.5rem;border-radius:6px;background:linear-gradient(135deg,var(--green),var(--green-bright));display:inline-flex;align-items:center;justify-content:center;color:#05271C;font-weight:800;font-size:.85rem;}
+
+  .apx{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);}
+
+  /* HUD nav */
+  .hud{position:fixed;bottom:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:center;gap:1rem;padding:1rem;pointer-events:none;}
+  .hud button{pointer-events:auto;width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--rule);background:rgba(255,255,255,.9);color:var(--ink);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;transition:border-color .15s,background .15s;}
+  .hud button:hover{border-color:var(--coral);color:var(--coral);}
+  .hud .count{pointer-events:auto;font-size:.82rem;font-weight:600;color:var(--ink-2);background:rgba(255,255,255,.9);border:1px solid var(--rule);border-radius:999px;padding:.4rem .9rem;min-width:4.5rem;text-align:center;}
+  .hud .count b{color:var(--coral);}
+  .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--coral),var(--coral-2));z-index:21;transition:width .28s ease;}
+
+  @media (max-width:760px){
+    .slide{padding:9vh 7vw 12vh;overflow-y:auto;justify-content:flex-start;}
+    body{overflow:auto;}
+    .stats,.tn2,.tl,.cols{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .flow .arrow{transform:rotate(90deg);}
+  }
+
+  @media print{
+    @page{size:1280px 720px;margin:0;}
+    html,body{overflow:visible;background:#fff;}
+    .hud,.progress{display:none!important;}
+    .deck{position:static;}
+    .slide{position:relative;inset:auto;opacity:1!important;pointer-events:auto;display:flex!important;
+      width:1280px;height:720px;page-break-after:always;break-after:page;}
+  }
+</style>
+
+<div class="progress" id="prog"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 · COVER -->
+  <section class="slide warm active">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">AI Readiness · Agentic Commerce</p>
+    <h1>Is your Magento store ready for <span class="kicker">AI shoppers?</span></h1>
+    <p class="sub">A readiness briefing prepared for <strong>[Merchant name]</strong>. How AI is changing who visits your store, and what it takes to still win the sale.</p>
+    <div class="cobuilt"><span class="gm">G</span> Powered by Goofre&trade;, an agentic-commerce platform we co-built</div>
+    <div class="pageno">Logic Rays · Agentic Commerce Orchestration</div>
+  </section>
+
+  <!-- 2 · THE SHIFT -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">01 · The shift</p>
+    <h1>Your next customer isn't a person. It's their&nbsp;<span class="kicker">AI</span>.</h1>
+    <p class="sub">People are starting to shop through assistants like ChatGPT, Gemini and Perplexity. When they do, an AI agent visits your store instead of a human, and it decides in seconds whether you are even an option.</p>
+    <div class="pageno">2</div>
+  </section>
+
+  <!-- 3 · WHAT IS AGENTIC COMMERCE -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">02 · In plain words</p>
+    <h2>What is agentic commerce?</h2>
+    <p class="sub">Shopping done by an AI agent on a person's behalf. It happens in three moves.</p>
+    <div class="flow">
+      <div class="node"><span class="n">Step 1</span><h3>The shopper asks</h3><p>&ldquo;Find a waterproof tent under $400 that arrives by Friday.&rdquo;</p></div>
+      <div class="arrow">&rarr;</div>
+      <div class="node"><span class="n">Step 2</span><h3>The agent compares</h3><p>It reads dozens of stores, checking stock, price, delivery and returns.</p></div>
+      <div class="arrow">&rarr;</div>
+      <div class="node"><span class="n">Step 3</span><h3>The agent buys</h3><p>From the one store it can fully read, trust and check out on.</p></div>
+    </div>
+    <div class="pageno">3</div>
+  </section>
+
+  <!-- 4 · PROOF / STATS -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">03 · It's already happening</p>
+    <h2>This is not a forecast. It's on the dashboard.</h2>
+    <div class="stats">
+      <div class="stat"><b>+693%</b><span>Year-over-year growth in AI referral traffic to US retail sites.</span><em>Adobe Analytics, 2025 holiday</em></div>
+      <div class="stat"><b>$262B</b><span>Online holiday sales influenced by AI and agents, about 20% of purchases.</span><em>Salesforce, 2025 holiday</em></div>
+      <div class="stat"><b>31-42%</b><span>Higher conversion from AI-referred shoppers than the site average.</span><em>Adobe Analytics</em></div>
+    </div>
+    <p class="foot-src">Sources: Adobe Analytics and Salesforce 2025 holiday shopping data. Figures are directional and move fast; see the appendix for links.</p>
+  </section>
+
+  <!-- 5 · WHY MAGENTO ISN'T READY -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">04 · The gap</p>
+    <div class="cols">
+      <div>
+        <h2>Magento wasn't built for AI shoppers.</h2>
+        <p class="sub">A great Magento store can still be invisible to an agent. The signals a machine needs are exactly the ones that are easy to leave incomplete.</p>
+      </div>
+      <ul class="clean">
+        <li><b>Structured data</b> an agent can parse, not just pretty pages</li>
+        <li><b>Clean product feeds</b> with price and availability that agree</li>
+        <li><b>Verified identity</b> the agent can trust before it buys</li>
+        <li><b>Quotable return and shipping terms</b>, not a policy PDF</li>
+        <li><b>A checkout an agent can actually drive</b></li>
+      </ul>
+    </div>
+    <p class="foot-src"><strong>It looks fine to a human. It fails silently for a machine.</strong></p>
+  </section>
+
+  <!-- 6 · COST OF DOING NOTHING -->
+  <section class="slide dark">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow" style="color:var(--green-bright)">05 · The stakes</p>
+    <p class="big-quote">The store an agent can't read doesn't get a &ldquo;no.&rdquo; <span class="g">It gets skipped.</span></p>
+    <p class="sub" style="color:#C9C3BB;max-width:56ch">No error page. No bounce-rate spike. No warning. The agent simply recommends a competitor it <em>can</em> read, and every month you stay unready you forfeit a slice of a channel that is compounding fast.</p>
+    <div class="pageno">6</div>
+  </section>
+
+  <!-- 7 · WHAT READY MEANS (5 LAYERS) -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">06 · What &ldquo;ready&rdquo; means</p>
+    <h2>Getting AI-ready isn't one switch. It's five layers.</h2>
+    <div class="strata">
+      <div class="layer"><span class="lname">Access</span><span class="q">Can the agent reach your store at all?</span><span class="ln">Layer 1</span></div>
+      <div class="layer"><span class="lname">Comprehension</span><span class="q">Can it understand what you sell?</span><span class="ln">Layer 2</span></div>
+      <div class="layer"><span class="lname">Identity &amp; Trust</span><span class="q">Can it trust you enough to transact?</span><span class="ln">Layer 3</span></div>
+      <div class="layer"><span class="lname">Transactability</span><span class="q">Can it actually complete the purchase?</span><span class="ln">Layer 4</span></div>
+      <div class="layer"><span class="lname">Reliability</span><span class="q">Does it stay true, every time?</span><span class="ln">Layer 5</span></div>
+    </div>
+    <p class="strata-note">Fail one layer and everything above it stops mattering. <b>And the bar keeps moving</b> as new standards (ACP, AP2, MCP) ship. Readiness is not a one-time fix.</p>
+    <div class="pageno">7</div>
+  </section>
+
+  <!-- 8 · BUDGET SUCCESSOR -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">07 · A new line item</p>
+    <h2>The SEO budget has a successor.</h2>
+    <div class="tn2">
+      <div class="tn then">
+        <span class="tag">Then · the search era</span>
+        <h3>You bought an SEO budget.</h3>
+        <p>Goal: rank in a list of blue links.</p>
+        <p>Win condition: <strong>the click.</strong></p>
+        <p>Tuned a few times a year.</p>
+      </div>
+      <div class="tn now">
+        <span class="tag">Now · the agent era</span>
+        <h3>You engage an ACO&trade;.</h3>
+        <p>Goal: be readable, trusted and buyable by agents.</p>
+        <p>Win condition: <span class="win">the sale an agent completes.</span></p>
+        <p>Run continuously, because the standard keeps moving.</p>
+      </div>
+    </div>
+    <div class="pageno">8</div>
+  </section>
+
+  <!-- 9 · SOLUTION: GOOFRE + ACO -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">08 · The solution</p>
+    <h2>You don't need a plugin. You need an <span class="g">orchestrator</span>.</h2>
+    <p class="sub">Readiness is complex and never finished, so it is not a tool you install. It is work an expert owns for you.</p>
+    <ul class="clean gk">
+      <li><b>Goofre&trade;</b> is the agentic-commerce platform we co-built to measure and fix readiness. We ship the standard, we don't resell someone else's plugin.</li>
+      <li>Because the work is hard and always shifting, a <b>Goofre&trade;-certified Agentic Commerce Orchestrator&trade; (ACO&trade;)</b> continuously optimizes your store.</li>
+      <li>An ACO&trade; is to agentic commerce what a forward-deployed engineer is to software: an embedded expert who owns the outcome.</li>
+    </ul>
+    <div class="pageno">9</div>
+  </section>
+
+  <!-- 10 · HOW IT WORKS -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">09 · How it works</p>
+    <h2>A managed engagement, not a one-off fix.</h2>
+    <div class="steps">
+      <div class="step"><div class="sn">1</div><h3>Readiness audit</h3><p>A rigorous multi-point audit across all five layers.</p><span class="dur">Free · your live store</span></div>
+      <div class="step"><div class="sn">2</div><h3>Dedicated ACO&trade;</h3><p>A certified orchestrator assigned to your store.</p><span class="dur">One point of accountability</span></div>
+      <div class="step"><div class="sn">3</div><h3>KPIs set</h3><p>Clear readiness and revenue targets agreed up front.</p><span class="dur">Measurable</span></div>
+      <div class="step"><div class="sn">4</div><h3>Reports &amp; reviews</h3><p>Weekly readiness reports and a bi-weekly working session.</p><span class="dur">Weekly · bi-weekly</span></div>
+      <div class="step"><div class="sn">5</div><h3>Keep optimizing</h3><p>Continuous orchestration as the standards move.</p><span class="dur">Ongoing</span></div>
+    </div>
+    <div class="pageno">10</div>
+  </section>
+
+  <!-- 11 · SAMPLE AUDIT -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">10 · The free audit</p>
+    <div class="cols">
+      <div>
+        <h2>You start with a graded readiness report.</h2>
+        <p class="sub">Every gap named in plain English, with its fix and who owns it. It is the free first step, whether or not you ever engage us.</p>
+      </div>
+      <div class="report">
+        <div class="rtop"><span>yourstore.com · sample report</span><span class="grade"><b>C</b><small>needs work</small></span></div>
+        <div class="rbody">
+          <div class="row"><span>Access</span><div class="track"><div class="fill" style="width:82%"></div></div><span class="sc">82</span></div>
+          <div class="row"><span>Comprehension</span><div class="track"><div class="fill" style="width:64%"></div></div><span class="sc">64</span></div>
+          <div class="row"><span>Identity &amp; Trust</span><div class="track"><div class="fill" style="width:41%"></div></div><span class="sc">41</span></div>
+          <div class="row"><span>Transactability</span><div class="track"><div class="fill" style="width:38%"></div></div><span class="sc">38</span></div>
+          <div class="row"><span>Reliability</span><div class="track"><div class="fill" style="width:70%"></div></div><span class="sc">70</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="pageno">11</div>
+  </section>
+
+  <!-- 12 · WHAT TO EXPECT -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">11 · What to expect</p>
+    <h2>Two outcomes, on a timeline.</h2>
+    <div class="tl">
+      <div class="card a"><span class="when">1 to 3 months</span><h3>Better surfacing on AI</h3><p>Your store becomes readable and trusted, so assistants like ChatGPT, Gemini and Perplexity start to find and recommend it.</p></div>
+      <div class="card b"><span class="when">~6 months</span><h3>Higher conversion</h3><p>As the store becomes fully buyable by agents and humans alike, more of that surfaced demand turns into completed sales.</p></div>
+    </div>
+    <p class="foot-src">Typical targets based on the readiness work, not guarantees. Actual timing depends on your starting grade and catalogue.</p>
+  </section>
+
+  <!-- 13 · WHY LOGIC RAYS -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">12 · Why us</p>
+    <h2>We didn't buy a tool. We <span class="g">co-built</span> one.</h2>
+    <p class="sub">The team readying your store is the same team building the standard it is measured against. That is a claim no agency reselling a plugin can make.</p>
+    <div class="proof">
+      <div><b>10+ <em>yrs</em></b><span>Building ecommerce</span></div>
+      <div><b>300+</b><span>Stores designed &amp; delivered</span></div>
+      <div><b>60+</b><span>Certified developers</span></div>
+      <div><b><em>Co-builder</em></b><span>Of the Goofre&trade; platform</span></div>
+    </div>
+    <div class="pageno">13</div>
+  </section>
+
+  <!-- 14 · NEXT STEPS -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow">13 · Next steps</p>
+    <h2>Three steps to ready.</h2>
+    <div class="steps n3">
+      <div class="step"><div class="sn">1</div><h3>Free audit</h3><p>We run the readiness audit on your live store and grade it A to F.</p><span class="dur">No obligation</span></div>
+      <div class="step"><div class="sn">2</div><h3>ACO&trade; readout</h3><p>Your assigned ACO&trade; walks the grade and the priority fixes with you.</p><span class="dur">30 minutes</span></div>
+      <div class="step"><div class="sn">3</div><h3>Sign up &amp; go</h3><p>Set KPIs and start the managed engagement. You stay ahead, not catching up.</p><span class="dur">When you're ready</span></div>
+    </div>
+    <p class="foot-src"><strong>The audit is free and there is no obligation.</strong> You keep the full report either way.</p>
+  </section>
+
+  <!-- 15 · CONTACT -->
+  <section class="slide dark">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="eyebrow" style="color:var(--green-bright)">Let's begin</p>
+    <h2>Let's see where your store stands.</h2>
+    <div class="contact-cta">
+      <span class="pill">Book your free AI readiness audit</span>
+      <p class="contact-lines">
+        <b>[Your name]</b>, Logic Rays<br>
+        [email@logicrays.com] · [+phone]<br>
+        Book directly: [cal.com/logicrays]
+      </p>
+    </div>
+    <div class="cobuilt" style="color:#8b857d"><span class="gm">G</span> Agentic Commerce Orchestration, powered by Goofre&trade;</div>
+    <div class="pageno">15</div>
+  </section>
+
+  <!-- APPENDIX A -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="apx">Appendix · Common questions</p>
+    <h2 style="margin-top:1rem">&ldquo;We already invest in SEO.&rdquo;</h2>
+    <p class="sub">SEO and its newer cousin AEO get your store <strong>mentioned</strong> by AI. That is the first two layers of a five-layer problem. Agentic readiness gets your store <strong>bought from</strong>. An agent that finds you but cannot verify your identity, read your return terms or complete checkout recommends a competitor it can.</p>
+    <div class="pageno">A1</div>
+  </section>
+
+  <!-- APPENDIX B -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="apx">Appendix · Common questions</p>
+    <h2 style="margin-top:1rem">&ldquo;Do we need to re-platform?&rdquo;</h2>
+    <p class="sub">No. The work happens on your <strong>existing Magento store</strong>: structured data, feeds, identity, policies and checkout, scoped by the audit. Your theme, catalogue and checkout stay yours. A readiness engagement is measured in weeks of focused work, not a re-platform measured in quarters.</p>
+    <div class="pageno">A2</div>
+  </section>
+
+  <!-- APPENDIX C -->
+  <section class="slide">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="apx">Appendix · The standards</p>
+    <h2 style="margin-top:1rem">Built to the standards agents use.</h2>
+    <ul class="clean gk">
+      <li><b>ACP</b> · Agentic Commerce Protocol (OpenAI + Stripe) governs how an agent completes a purchase. Powers checkout in ChatGPT.</li>
+      <li><b>AP2</b> · Agent Payments Protocol (Google + 60 payment networks) governs trusted, authorised agent payments.</li>
+      <li><b>MCP</b> · Model Context Protocol (Anthropic) governs how an agent reaches and reads your store's data.</li>
+    </ul>
+    <p class="strata-note">Goofre&trade; measures your store against these standards, so your readiness is held to a public bar, not our opinion.</p>
+    <div class="pageno">A3</div>
+  </section>
+
+  <!-- APPENDIX D -->
+  <section class="slide warm">
+    <div class="mk"><span class="sq"></span>Logic <b>Rays</b></div>
+    <p class="apx">Appendix · Sources</p>
+    <h2 style="margin-top:1rem">Where the numbers come from.</h2>
+    <ul class="clean">
+      <li><b>Adobe Analytics</b>, 2025 holiday shopping data: AI referral traffic to US retail up 693% year over year; AI-referred shoppers convert 31 to 42% better and engage more.</li>
+      <li><b>Salesforce</b>, 2025 holiday shopping data: $262B of AI-influenced online sales, roughly 20% of purchases; AI-search traffic doubled year over year.</li>
+      <li><b>Gartner</b>: AI agents projected to intermediate $15 trillion in B2B spend by 2028.</li>
+    </ul>
+    <p class="foot-src">Figures are directional and reported by third parties; verify the latest primary source before quoting.</p>
+  </section>
+
+</div>
+
+<div class="hud">
+  <button id="prev" aria-label="Previous slide">&#8249;</button>
+  <span class="count"><b id="cur">1</b> / <span id="total">19</span></span>
+  <button id="next" aria-label="Next slide">&#8250;</button>
+</div>
+
+<script>
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var i = 0, prog = document.getElementById('prog'), cur = document.getElementById('cur');
+    document.getElementById('total').textContent = slides.length;
+    function show(n){
+      i = Math.max(0, Math.min(slides.length-1, n));
+      slides.forEach(function(s,x){ s.classList.toggle('active', x===i); });
+      cur.textContent = i+1;
+      prog.style.width = ((i+1)/slides.length*100)+'%';
+      if(location.hash !== '#'+(i+1)) history.replaceState(null,'','#'+(i+1));
+    }
+    function next(){ show(i+1); }
+    function prev(){ show(i-1); }
+    document.getElementById('next').addEventListener('click', next);
+    document.getElementById('prev').addEventListener('click', prev);
+    document.addEventListener('keydown', function(e){
+      if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ') { next(); e.preventDefault(); }
+      else if(e.key==='ArrowLeft'||e.key==='PageUp') { prev(); e.preventDefault(); }
+      else if(e.key==='Home') show(0);
+      else if(e.key==='End') show(slides.length-1);
+    });
+    // click right / left half of the stage to advance (ignore clicks on buttons)
+    document.getElementById('deck').addEventListener('click', function(e){
+      if(e.target.closest('a,button')) return;
+      (e.clientX > window.innerWidth*0.5) ? next() : prev();
+    });
+    window.addEventListener('hashchange', function(){
+      var n = parseInt((location.hash||'').replace('#',''),10);
+      if(!isNaN(n) && n-1 !== i) show(n-1);
+    });
+    var start = parseInt((location.hash||'').replace('#',''),10);
+    show(isNaN(start)?0:start-1);
+  })();
+</script>
