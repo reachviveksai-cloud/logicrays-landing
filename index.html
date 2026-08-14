@@ -78,7 +78,7 @@
     { "@type": "Question", "name": "Do I need to rebuild my store or change platforms?", "acceptedAnswer": { "@type": "Answer", "text": "No. The work happens on your existing Magento store: the Goofre storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters." } },
     { "@type": "Question", "name": "What does the free audit include, and what happens after?", "acceptedAnswer": { "@type": "Answer", "text": "We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally. Others engage our Agentic Commerce Orchestration service: a dedicated, Goofre-certified ACO assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as the standard shifts. There is no obligation either way." } },
     { "@type": "Question", "name": "Why Logic Rays for AI readiness?", "acceptedAnswer": { "@type": "Answer", "text": "Because we co-build the platform. Goofre, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it." } },
-    { "@type": "Question", "name": "Which agentic commerce standards do you build to?", "acceptedAnswer": { "@type": "Answer", "text": "The open standards the market is actually converging on: the Agentic Commerce Protocol (ACP) from OpenAI and Stripe, which powers agent checkout in ChatGPT; the Agent Payments Protocol (AP2) from Google and 60-plus payment networks, for trusted machine-initiated payments; and the Model Context Protocol (MCP) from Anthropic, for how agents access store data. Goofre's readiness engine measures your store against these standards and the structured-data foundations beneath them, so your readiness is held to a public bar, not our opinion." } }
+    { "@type": "Question", "name": "Which agentic commerce standards do you build to?", "acceptedAnswer": { "@type": "Answer", "text": "The open standards the market is actually converging on: the Universal Commerce Protocol (UCP) from Google and Shopify, the full-lifecycle standard your store publishes a manifest for and the one we measure most directly; the Agentic Commerce Protocol (ACP) from OpenAI and Stripe, for the feed-to-checkout handoff; the Agent Payments Protocol (AP2) from Google and 60-plus payment networks, for trusted machine-initiated payments; and the Model Context Protocol (MCP) from Anthropic, for how agents access store data. Goofre's readiness engine measures your store against these standards and the structured-data foundations beneath them, so your readiness is held to a public bar, not our opinion." } }
   ]
 }
 </script>
@@ -170,7 +170,7 @@
   section[id], div[id] { scroll-margin-top: 134px; }
 
   /* ── 06 · Standards authority band ────────────────────────────────── */
-  .protos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.8rem 0 0; }
+  .protos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 1.8rem 0 0; }
   .proto { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px;
     padding: 1.6rem 1.5rem; display: flex; flex-direction: column; }
   .proto-tag { align-self: flex-start; font-weight: 800; font-size: .82rem; letter-spacing: .05em; color: var(--green);
@@ -679,11 +679,19 @@
     </p>
     <div class="protos">
       <div class="proto">
+        <span class="proto-tag">UCP</span>
+        <h3>Universal Commerce Protocol</h3>
+        <p class="proto-by">Google + Shopify · adopted by Walmart, Target, Etsy</p>
+        <p>How your store tells AI agents what it can do, in a manifest they read automatically. The
+        standard that covers the whole journey, from being discovered to completing the sale.</p>
+        <span class="proto-layer">All 5 layers · discovery to purchase</span>
+      </div>
+      <div class="proto">
         <span class="proto-tag">ACP</span>
         <h3>Agentic Commerce Protocol</h3>
-        <p class="proto-by">OpenAI + Stripe · powers ChatGPT checkout</p>
-        <p>The open standard for how an AI agent completes a purchase: reads your catalogue, builds the
-        cart and checks out, without a human ever touching your site.</p>
+        <p class="proto-by">OpenAI + Stripe</p>
+        <p>The open standard for how an AI agent moves from your product feed to a completed purchase,
+        without a human ever touching your site.</p>
         <span class="proto-layer">Layer 4 · Transactability</span>
       </div>
       <div class="proto">
@@ -735,7 +743,7 @@
       <details><summary>Do I need to rebuild my store or change platforms?</summary><p>No. The work happens on your existing Magento store: the Goofre™ storefront module, configuration, and targeted fixes from the audit's gap list. Your theme, catalog and checkout stay yours. A typical readiness engagement is a fixed-scope project measured in weeks, not a re-platform measured in quarters.</p></details>
       <details><summary>What does the free audit include, and what happens after?</summary><p>We audit your live store across five layers and hand you a graded A to F report: every gap named in plain English, with its fix and who owns it. What happens next is your call. Many merchants take the report and fix things internally. Others engage our <strong>Agentic Commerce Orchestration</strong> service: a dedicated, Goofre™-certified ACO™ assigned to your store, weekly readiness reports, bi-weekly working sessions, and continuous orchestration as the standard shifts. There is no obligation either way.</p></details>
       <details><summary>Why Logic Rays for AI readiness?</summary><p>Because we co-build the platform. Goofre™, the audit standard and the storefront module behind this service, is a product we are building together with an innovative Canadian product team, on top of more than a decade of building Magento stores. Your current agency would be reselling a tool. We ship it.</p></details>
-      <details><summary>Which agentic commerce standards do you build to?</summary><p>The open standards the market is actually converging on: the <strong>Agentic Commerce Protocol (ACP)</strong> from OpenAI and Stripe, which powers agent checkout in ChatGPT; the <strong>Agent Payments Protocol (AP2)</strong> from Google and 60+ payment networks, for trusted machine-initiated payments; and the <strong>Model Context Protocol (MCP)</strong> from Anthropic, for how agents access store data. Goofre™'s readiness engine measures your store against these standards and the structured-data foundations beneath them, so your readiness is held to a public bar, not our opinion.</p></details>
+      <details><summary>Which agentic commerce standards do you build to?</summary><p>The open standards the market is actually converging on: the <strong>Universal Commerce Protocol (UCP)</strong> from Google and Shopify, the full-lifecycle standard your store publishes a manifest for and the one we measure most directly; the <strong>Agentic Commerce Protocol (ACP)</strong> from OpenAI and Stripe, for the feed-to-checkout handoff; the <strong>Agent Payments Protocol (AP2)</strong> from Google and 60+ payment networks, for trusted machine-initiated payments; and the <strong>Model Context Protocol (MCP)</strong> from Anthropic, for how agents access store data. Goofre™'s readiness engine measures your store against these standards and the structured-data foundations beneath them, so your readiness is held to a public bar, not our opinion.</p></details>
     </div>
   </section>
 
@@ -773,7 +781,7 @@
       <div class="foot-col">
         <h4>Agentic commerce</h4>
         <a href="#how">The ACO™ service</a>
-        <a href="#standards">Standards: ACP, AP2, MCP</a>
+        <a href="#standards">Standards: UCP, ACP, AP2, MCP</a>
         <a href="https://reachviveksai-cloud.github.io/goofre-landing/?src=lr-aco-footer">About Goofre™</a>
       </div>
       <div class="foot-col">
@@ -785,7 +793,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 Logic Rays. In partnership with Goofre™.</span>
-      <span>Built to the emerging agentic-commerce standards: ACP · AP2 · MCP.</span>
+      <span>Built to the emerging agentic-commerce standards: UCP · ACP · AP2 · MCP.</span>
       <span>"Agentic Commerce Orchestrator™" is a trademark of Goofre.</span>
     </div>
   </div>
